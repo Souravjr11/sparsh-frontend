@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Event | SPARSH Group of Events</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="booking-page">
+  <div id="overlay"></div>
+
+  <header class="navbar">
+    <div class="nav-container">
+      <a class="logo" href="index.html" aria-label="SPARSH Group of Events home">
+        <img src="images/LOGO MAIN 3..png" alt="SPARSH Group of Events">
+        <span class="company-name">SPARSH GROUP OF EVENTS</span>
+      </a>
+
+      <nav id="navMenu" aria-label="Primary navigation">
+        <a href="index.html#about">About</a>
+        <a href="events.html">Events</a>
+        <a href="booking.html" class="active-link">Book</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="index.html#why-us">Why Us</a>
+        <a href="index.html#testimonials">Testimonials</a>
+        <a href="index.html#faq">FAQ</a>
+      </nav>
+
+      <div class="nav-right">
+        <div id="userBadge" style="display:none;" class="user-badge">
+          <img id="userPhoto" alt="User">
+          <span id="userName"></span>
+        </div>
+        <a href="javascript:void(0)" class="login-btn" id="loginBtn" onclick="openLogin()">Login</a>
+        <a href="javascript:void(0)" class="login-btn logout" id="logoutBtn" style="display:none;">Logout</a>
+        <button class="menu-icon" type="button" aria-label="Open navigation menu" aria-expanded="false" onclick="toggleMenu()">&#9776;</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="booking-hero">
+      <div class="booking-hero__copy">
+        <p class="section-kicker">✨ Direct Event Reservation</p>
+        <h1>Reserve Your Date with <span>SPARSH Events</span></h1>
+        <p>
+          Choose your tailored event package or preferred live musical band, select your celebration date, and receive instant confirmation & customized quotes directly on WhatsApp.
+        </p>
+        <div class="booking-hero__stats">
+          <span><b>10+</b> Live Musical Bands</span>
+          <span><b>3</b> Event Packages</span>
+          <span><b>100%</b> On-Time Setup</span>
+        </div>
+      </div>
+      <div class="booking-hero__media">
+        <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1200&q=80" alt="Live concert and event booking celebration" loading="lazy">
+        <div class="booking-hero__floating-badge">
+          <span>★ 4.9 / 5 Rating</span>
+          <span>500+ Events Hosted</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST & GUARANTEE STRIP -->
+    <div class="booking-trust-strip">
+      <div class="trust-item">
+        <div class="trust-icon">🛡️</div>
+        <h4>Auditioned Artists</h4>
+        <p>100% verified & experienced live performers</p>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">💰</div>
+        <h4>Transparent Rates</h4>
+        <p>No hidden charges or surprise surcharges</p>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">⚡</div>
+        <h4>Fast Confirmation</h4>
+        <p>60-min quote & date availability on WhatsApp</p>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">📍</div>
+        <h4>Pan-India Coverage</h4>
+        <p>Local, outstation & destination events</p>
+      </div>
+    </div>
+
+    <section class="booking-section booking-page-section" id="booking">
+      <div class="booking-container">
+        <div class="booking-section-header">
+          <h2>Choose Your Celebration</h2>
+          <p>Tap a category below for instant selection, or fill the reservation form directly.</p>
+        </div>
+
+        <!-- VISUAL EVENT SELECTOR -->
+        <div class="booking-category-cards" aria-label="Quick event category selector">
+          <button type="button" class="booking-cat-card" onclick="selectEventCategory('Wedding Event Package', this)">
+            <div class="booking-cat-card__media">
+              <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=600&q=80" alt="Wedding Package" loading="lazy">
+            </div>
+            <div class="booking-cat-card__body">
+              <span class="booking-cat-card__title">💒 Weddings</span>
+              <span class="booking-cat-card__sub">Starting from ₹35,000</span>
+            </div>
+          </button>
+          <button type="button" class="booking-cat-card" onclick="selectEventCategory('Birthday Event Package', this)">
+            <div class="booking-cat-card__media">
+              <img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?auto=format&fit=crop&w=600&q=80" alt="Birthday Package" loading="lazy">
+            </div>
+            <div class="booking-cat-card__body">
+              <span class="booking-cat-card__title">🎂 Birthdays</span>
+              <span class="booking-cat-card__sub">Starting from ₹8,000</span>
+            </div>
+          </button>
+          <button type="button" class="booking-cat-card" onclick="selectEventCategory('Carnival Event Package', this)">
+            <div class="booking-cat-card__media">
+              <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=600&q=80" alt="Carnival Package" loading="lazy">
+            </div>
+            <div class="booking-cat-card__body">
+              <span class="booking-cat-card__title">🎪 Carnivals</span>
+              <span class="booking-cat-card__sub">Starting from ₹45,000</span>
+            </div>
+          </button>
+          <button type="button" class="booking-cat-card" onclick="selectEventCategory('Rock Fusion Band', this)">
+            <div class="booking-cat-card__media">
+              <img src="https://images.unsplash.com/photo-1465847899084-d164df4dedc6?auto=format&fit=crop&w=600&q=80" alt="Live Bands" loading="lazy">
+            </div>
+            <div class="booking-cat-card__body">
+              <span class="booking-cat-card__title">🎸 Musical Bands</span>
+              <span class="booking-cat-card__sub">Starting from ₹15,000</span>
+            </div>
+          </button>
+        </div>
+
+        <div class="booking-box">
+          <div class="booking-info">
+            <h3>⭐ Booking Highlights</h3>
+            <p>Full-scale event production with bespoke sound, staging, and top-tier artists.</p>
+            
+            <ul class="booking-perks-list">
+              <li>
+                <span class="perk-icon">✓</span>
+                <div><b>Top-Tier Artists:</b> Auditioned musical acts, DJs, singers, and acoustic ensembles.</div>
+              </li>
+              <li>
+                <span class="perk-icon">✓</span>
+                <div><b>Bespoke Decor & Lighting:</b> Customized stages, ambient LED rigs, and audio consoles.</div>
+              </li>
+              <li>
+                <span class="perk-icon">✓</span>
+                <div><b>Destination Coverage:</b> Seamless outstation event coordination across India.</div>
+              </li>
+              <li>
+                <span class="perk-icon">✓</span>
+                <div><b>Transparent Pricing:</b> Clear deliverables and instant WhatsApp coordination.</div>
+              </li>
+            </ul>
+
+            <div class="booking-help-card">
+              <h4>💡 Need Custom Add-ons?</h4>
+              <p>You can request customized additions on WhatsApp anytime — including cold pyros, drone cinematography, celebrity hosts, LED video walls, and theme decor.</p>
+            </div>
+
+            <div class="booking-direct-support">
+              <span>Direct Hotline:</span>
+              <a href="tel:+918420605823">📞 +91 8420605823</a>
+            </div>
+          </div>
+
+          <div class="booking-action">
+            <h3>📝 Reserve Your Date</h3>
+            <p>Fill out your details below to save your booking and connect instantly via WhatsApp.</p>
+
+            <form id="bookingForm" class="booking-form">
+              <div class="booking-form-group">
+                <label for="bookName">👤 Full Name</label>
+                <input type="text" id="bookName" placeholder="e.g. Rahul Sharma" required>
+              </div>
+
+              <div class="booking-form-group">
+                <label for="bookPhone">📞 Phone / WhatsApp Number</label>
+                <input type="tel" id="bookPhone" placeholder="e.g. +91 98765 43210" required>
+              </div>
+
+              <div class="booking-form-group">
+                <label for="bookBand">🎸 Select Event Package or Musical Band</label>
+                <select id="bookBand" required>
+                  <option value="" disabled selected>-- Choose Package or Band --</option>
+                  <optgroup label="💒 Wedding Packages">
+                    <option value="Wedding Basic (₹35,000 – ₹60,000)">Wedding Basic (₹35,000 – ₹60,000)</option>
+                    <option value="Wedding Classic (₹80,000 – ₹1,50,000)">Wedding Classic (₹80,000 – ₹1,50,000)</option>
+                    <option value="Wedding Luxury (₹2,00,000 – ₹4,50,000)">Wedding Luxury (₹2,00,000 – ₹4,50,000)</option>
+                  </optgroup>
+                  <optgroup label="🎂 Birthday Packages">
+                    <option value="Birthday Basic (₹8,000 – ₹15,000)">Birthday Basic (₹8,000 – ₹15,000)</option>
+                    <option value="Birthday Fun (₹18,000 – ₹35,000)">Birthday Fun (₹18,000 – ₹35,000)</option>
+                    <option value="Birthday Grand (₹40,000 – ₹75,000)">Birthday Grand (₹40,000 – ₹75,000)</option>
+                  </optgroup>
+                  <optgroup label="🎪 Carnival Packages">
+                    <option value="Mini Carnival (₹45,000 – ₹90,000)">Mini Carnival (₹45,000 – ₹90,000)</option>
+                  </optgroup>
+                  <optgroup label="🎸 Live Musical Bands & Acts">
+                    <option value="Acoustic Evenings (Starting ₹15,000)">Acoustic Evenings (Starting ₹15,000)</option>
+                    <option value="Classical Strings (Starting ₹20,000)">Classical Strings (Starting ₹20,000)</option>
+                    <option value="DJ Night Beats (Starting ₹25,000)">DJ Night Beats (Starting ₹25,000)</option>
+                    <option value="Carnival Rhythm Crew (Starting ₹28,000)">Carnival Rhythm Crew (Starting ₹28,000)</option>
+                    <option value="Wedding Melodies (Starting ₹35,000)">Wedding Melodies (Starting ₹35,000)</option>
+                    <option value="Fusion Folk Collective (Starting ₹35,000)">Fusion Folk Collective (Starting ₹35,000)</option>
+                    <option value="Rock Fusion Band (Starting ₹40,000)">Rock Fusion Band (Starting ₹40,000)</option>
+                    <option value="Bollywood Live (Starting ₹45,000)">Bollywood Live (Starting ₹45,000)</option>
+                    <option value="Corporate Groove (Starting ₹50,000)">Corporate Groove (Starting ₹50,000)</option>
+                    <option value="Premium Live Ensemble (Starting ₹75,000)">Premium Live Ensemble (Starting ₹75,000)</option>
+                  </optgroup>
+                </select>
+              </div>
+
+              <div class="booking-form-group">
+                <label for="bookDate">📅 Event Date</label>
+                <input type="date" id="bookDate" required>
+              </div>
+
+              <div class="booking-form-actions">
+                <button type="submit" class="whatsapp-btn">
+                  ✨ Confirm & Submit Booking
+                </button>
+                <p id="bookMsg"></p>
+
+                <button type="button" class="whatsapp-btn secondary-whatsapp" onclick="openWhatsAppFromForm()">
+                  💬 Instant WhatsApp Discussion
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3-STEP PROCESS SECTION -->
+    <section class="booking-steps-section">
+      <div class="booking-section-header">
+        <h2>How Reservation Works</h2>
+        <p>Simple, reliable 3-step process to bring your celebration to life.</p>
+      </div>
+
+      <div class="booking-steps">
+        <div>
+          <span>01</span>
+          <h3>Select Experience</h3>
+          <p>Choose a wedding, birthday, carnival package, or one of our 10 live musical bands.</p>
+        </div>
+        <div>
+          <span>02</span>
+          <h3>Submit Event Date</h3>
+          <p>Provide your contact details, event location, and celebration date.</p>
+        </div>
+        <div>
+          <span>03</span>
+          <h3>WhatsApp Confirmation</h3>
+          <p>Our event manager confirms artist availability, technical rider, and final pricing.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="myBookings" class="booking-section booking-history-section" style="display:none;">
+      <div class="booking-container">
+        <h2>My Bookings</h2>
+        <p id="myBookingsMsg"></p>
+        <div id="myBookingsList"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-box">
+        <h3>SPARSH Group of Events</h3>
+        <p>Professional event planning, musical bands, and entertainment services for every celebration.</p>
+      </div>
+      <div class="footer-box">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="booking.html">Book</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+      </div>
+      <div class="footer-box">
+        <h4>Contact Us</h4>
+        <p>Kolkata, India</p>
+        <p>+91 8420605823</p>
+        <p>souravdhara087@gmail.com</p>
+      </div>
+      <div class="footer-box">
+        <h4>Follow Us</h4>
+        <div class="social-links">
+          <a href="https://www.facebook.com/sourav.dhara.54738">Facebook</a>
+          <a href="https://www.instagram.com/souravjr_11/">Instagram</a>
+          <a href="#">YouTube</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; 2026 SPARSH Group of Events. All Rights Reserved.</div>
+  </footer>
+
+  <div class="login-modal" id="loginModal">
+    <div class="login-box">
+      <span class="close-btn" onclick="closeLogin()">X</span>
+      <h2>User Login</h2>
+
+      <form id="loginForm">
+        <button type="button" class="google-btn" onclick="googleLogin()">
+          <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google">
+          Continue with Google
+        </button>
+
+        <div class="divider"><span>OR</span></div>
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <input type="password" id="confirmPassword" placeholder="Confirm Password" style="display:none;">
+        <button type="submit" id="loginSubmitBtn">Login</button>
+        <button type="button" id="registerBtn" class="register-btn" style="display:none;">Create Account</button>
+        <p class="toggle-auth"><a href="javascript:void(0)" id="toggleRegister">Create new account</a></p>
+        <p id="loginMsg"></p>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal" id="bandModal" style="display:none;">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeBandDetails()">X</button>
+      <div class="modal-grid">
+        <div class="modal-media">
+          <div class="modal-image-container">
+            <img id="mImg" alt="Band">
+            <div class="modal-media-badge" id="mBadge">Live Band Performance</div>
+          </div>
+          <video id="mVideo" controls style="display:none;"></video>
+          <a id="mYtBtn" href="https://youtu.be/SAKvJzuPcxg" target="_blank" rel="noopener noreferrer" class="modal-video-link" style="display:none;">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 22c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 2c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"/></svg>
+            Watch Video Performance on YouTube ↗
+          </a>
+        </div>
+        <div class="modal-info">
+          <h2 id="mName"></h2>
+          <div class="modal-rating">
+            <span id="mStars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span id="mRatingText"></span>
+          </div>
+          <p><b>Starting Price:</b> <span id="mPrice"></span></p>
+          <p><b>Genres:</b> <span id="mGenres"></span></p>
+          <p><b>Duration Options:</b> <span id="mDurations"></span></p>
+          <p><b>Location:</b> <span id="mLocation"></span></p>
+          <p id="mDesc" class="modal-desc"></p>
+          <button class="btn-primary" id="mBookBtn">Book This Band</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="celebrationLayer" class="celebrate-layer" aria-hidden="true"></div>
+
+  <script type="module" src="js/firebase-auth.js?v=80"></script>
+  <script defer src="./js/main.js?v=70"></script>
+</body>
+</html>

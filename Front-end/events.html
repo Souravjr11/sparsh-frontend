@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events | SPARSH Group of Events</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="events-page">
+  <div id="overlay"></div>
+
+  <header class="navbar">
+    <div class="nav-container">
+      <a class="logo" href="index.html" aria-label="SPARSH Group of Events home">
+        <img src="images/LOGO MAIN 3..png" alt="SPARSH Group of Events">
+        <span class="company-name">SPARSH GROUP OF EVENTS</span>
+      </a>
+
+      <nav id="navMenu" aria-label="Primary navigation">
+        <a href="index.html#about">About</a>
+        <a href="events.html" class="active-link">Events</a>
+        <a href="booking.html">Book</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="index.html#why-us">Why Us</a>
+        <a href="index.html#testimonials">Testimonials</a>
+        <a href="index.html#faq">FAQ</a>
+      </nav>
+
+      <div class="nav-right">
+        <a href="javascript:void(0)" class="login-btn" id="loginBtn" onclick="openLogin()">Login</a>
+        <a href="javascript:void(0)" class="login-btn logout" id="logoutBtn" style="display:none;">Logout</a>
+        <button class="menu-icon" type="button" aria-label="Open navigation menu" aria-expanded="false" onclick="toggleMenu()">&#9776;</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="events-hero">
+      <div class="events-hero__media">
+        <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1200&q=80" alt="Decorated luxury event setup" loading="lazy">
+      </div>
+      <div class="events-hero__content">
+        <p class="section-kicker">Complete event planning</p>
+        <h1>Events handled from idea to final applause</h1>
+        <p>
+          Explore every event service shown on our landing page, with packages,
+          add-ons, travel options, and booking details in one place.
+        </p>
+        <div class="event-chip-row" aria-label="Available event types">
+          <a href="#wedding">Wedding</a>
+          <a href="#birthday">Birthday</a>
+          <a href="#carnival">Carnival</a>
+          <a href="#bands">Musical Bands</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="event-detail-section" id="wedding">
+      <div class="event-detail-grid">
+        <div class="event-detail-media">
+          <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=1200&q=80" alt="Wedding decoration and stage setup" loading="lazy">
+        </div>
+        <div class="event-detail-copy">
+          <p class="section-kicker">Decor &bull; Stage &bull; DJ &bull; Live</p>
+          <h2>Wedding Events</h2>
+          <p>
+            Full wedding event management for local, destination, and outstation
+            celebrations. We can handle decoration, sound, lighting, artist
+            coordination, photography, and day-of management.
+          </p>
+          <div class="detail-list">
+            <span>Basic stage decor</span>
+            <span>Luxury decor options</span>
+            <span>Sound and lighting setup</span>
+            <span>DJ and live artist coordination</span>
+            <span>Event coordinator support</span>
+            <span>Optional photo and video coverage</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="event-package-grid">
+        <article class="event-package-card">
+          <span class="package-label">Low Budget</span>
+          <h3>Wedding Basic</h3>
+          <p>Decoration + sound for simple ceremonies and compact venues.</p>
+          <ul>
+            <li>Basic stage decor</li>
+            <li>Sound system</li>
+            <li>Coordinator</li>
+          </ul>
+          <strong>Rs. 35,000 - Rs. 60,000</strong>
+          <button class="btn-primary" type="button" onclick="bookPackage('Wedding','Low','Wedding Basic','wedding')">Book this package</button>
+        </article>
+
+        <article class="event-package-card featured">
+          <span class="package-label">Most Popular</span>
+          <h3>Wedding Classic</h3>
+          <p>Stage, lights, and DJ support for a fuller wedding experience.</p>
+          <ul>
+            <li>Stage decor</li>
+            <li>Lighting setup</li>
+            <li>DJ</li>
+          </ul>
+          <strong>Rs. 80,000 - Rs. 1,50,000</strong>
+          <button class="btn-primary" type="button" onclick="bookPackage('Wedding','Medium','Wedding Classic','wedding')">Book this package</button>
+        </article>
+
+        <article class="event-package-card">
+          <span class="package-label">Premium</span>
+          <h3>Wedding Luxury</h3>
+          <p>Premium decor and complete management for grand celebrations.</p>
+          <ul>
+            <li>Luxury decor</li>
+            <li>DJ + live artist</li>
+            <li>Complete management</li>
+          </ul>
+          <strong>Rs. 2,00,000 - Rs. 4,50,000</strong>
+          <button class="btn-primary" type="button" onclick="bookPackage('Wedding','Premium','Wedding Luxury','wedding')">Book this package</button>
+        </article>
+      </div>
+
+      <div class="event-extra-panel">
+        <h3>Wedding Add-ons</h3>
+        <div class="addon-section event-addon-section">
+          <div class="addon-grid">
+            <label class="addon-card"><input type="checkbox" value="Flower Decoration"><span>Flower Decoration</span></label>
+            <label class="addon-card"><input type="checkbox" value="Catering Service"><span>Catering Service</span></label>
+            <label class="addon-card"><input type="checkbox" value="Stage Decoration"><span>Stage Decoration</span></label>
+            <label class="addon-card"><input type="checkbox" value="Photography & Videography"><span>Photography & Videography</span></label>
+          </div>
+        </div>
+        <p>Destination options: Local, Destination, Outstation. Final pricing depends on travel and venue requirements.</p>
+      </div>
+    </section>
+
+    <section class="event-detail-section alt" id="birthday">
+      <div class="event-detail-grid">
+        <div class="event-detail-media">
+          <img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?auto=format&fit=crop&w=1200&q=80" alt="Birthday event decoration" loading="lazy">
+        </div>
+        <div class="event-detail-copy">
+          <p class="section-kicker">Theme &bull; Games &bull; DJ &bull; Host</p>
+          <h2>Birthday Events</h2>
+          <p>
+            Birthday packages for children, friends, family gatherings, and
+            larger party nights. Choose simple theme decor or a complete hosted
+            celebration with lights, music, games, and anchoring.
+          </p>
+          <div class="detail-list">
+            <span>Theme decoration</span>
+            <span>Balloon styling</span>
+            <span>Games and host</span>
+            <span>DJ and party lights</span>
+            <span>Anchoring</span>
+            <span>Snacks and catering support</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="event-package-grid">
+        <article class="event-package-card">
+          <span class="package-label">Low Budget</span>
+          <h3>Birthday Basic</h3>
+          <p>Theme decor, games, and host for a neat birthday setup.</p>
+          <ul>
+            <li>Theme decor</li>
+            <li>Games</li>
+            <li>Host</li>
+          </ul>
+          <strong>Rs. 8,000 - Rs. 15,000</strong>
+          <button class="btn-primary" type="button" onclick="bookPackage('Birthday','Low','Birthday Basic','birthday')">Book this package</button>
+        </article>
+
+        <article class="event-package-card featured">
+          <span class="package-label">Most Popular</span>
+          <h3>Birthday Fun</h3>
+          <p>Music-led party package with DJ, games, and hosting.</p>
+          <ul>
+            <li>Theme decor</li>
+            <li>DJ</li>
+            <li>Games + host</li>
+          </ul>
+          <strong>Rs. 18,000 - Rs. 35,000</strong>
+          <button class="btn-primary" type="button" onclick="bookPackage('Birthday','Medium','Birthday Fun','birthday')">Book this package</button>
+        </article>
+
+        <article class="event-package-card">
+          <span class="package-label">Premium</span>
+          <h3>Birthday Grand</h3>
+          <p>A brighter party setup with premium decor, lights, and anchoring.</p>
+          <ul>
+            <li>Premium decor</li>
+            <li>DJ + lights</li>
+            <li>Anchoring</li>
+          </ul>
+          <strong>Rs. 40,000 - Rs. 75,000</strong>
+          <button class="btn-primary" type="button" onclick="bookPackage('Birthday','Premium','Birthday Grand','birthday')">Book this package</button>
+        </article>
+      </div>
+
+      <div class="event-extra-panel">
+        <h3>Birthday Add-ons</h3>
+        <div class="addon-section event-addon-section">
+          <div class="addon-grid">
+            <label class="addon-card"><input type="checkbox" value="Theme Decoration"><span>Theme Decoration</span></label>
+            <label class="addon-card"><input type="checkbox" value="Balloon Decoration"><span>Balloon Decoration</span></label>
+            <label class="addon-card"><input type="checkbox" value="Catering / Snacks"><span>Catering / Snacks</span></label>
+            <label class="addon-card"><input type="checkbox" value="Magic Show / Game Host"><span>Magic Show / Game Host</span></label>
+          </div>
+        </div>
+        <p>Destination options: Local and Outstation. Final pricing is confirmed before booking.</p>
+      </div>
+    </section>
+
+    <section class="event-detail-section" id="carnival">
+      <div class="event-detail-grid">
+        <div class="event-detail-media">
+          <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=1200&q=80" alt="Carnival fair and festival illumination" loading="lazy">
+        </div>
+        <div class="event-detail-copy">
+          <p class="section-kicker">Stalls &bull; Lights &bull; Stage</p>
+          <h2>Carnival Events</h2>
+          <p>
+            Carnival setups for schools, communities, societies, clubs, and
+            public gatherings. We plan stall flow, music, lighting, basic stage
+            support, and guest-friendly event movement.
+          </p>
+          <div class="detail-list">
+            <span>Food stall planning</span>
+            <span>Lighting setup</span>
+            <span>Music system</span>
+            <span>Stage support</span>
+            <span>Vendor coordination</span>
+            <span>Local and outstation planning</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="event-package-grid single">
+        <article class="event-package-card featured">
+          <span class="package-label">Standard</span>
+          <h3>Mini Carnival</h3>
+          <p>A compact carnival setup with food stalls, lighting, and music.</p>
+          <ul>
+            <li>Food stalls</li>
+            <li>Lighting</li>
+            <li>Music system</li>
+          </ul>
+          <strong>Rs. 45,000 - Rs. 90,000</strong>
+          <button class="btn-primary" type="button" onclick="bookPackage('Carnival','Standard','Mini Carnival')">Book this package</button>
+        </article>
+      </div>
+    </section>
+
+    <section class="event-detail-section alt" id="bands">
+      <div class="event-detail-grid">
+        <div class="event-detail-media">
+          <img src="https://images.unsplash.com/photo-1465847899084-d164df4dedc6?auto=format&fit=crop&w=1200&q=80" alt="Live musical band performance" loading="lazy">
+        </div>
+        <div class="event-detail-copy">
+          <p class="section-kicker">Rock &bull; Pop &bull; Live</p>
+          <h2>Musical Bands</h2>
+          <p>
+            Professional live bands for weddings, concerts, college fests,
+            private parties, carnivals, and night events. Performance duration
+            can be selected based on your event schedule.
+          </p>
+          <div class="detail-list">
+            <span>Starting from Rs. 15,000</span>
+            <span>Kolkata, West Bengal, Outstation</span>
+            <span>1 hour, 2 hour, or full event</span>
+            <span>Setup time: 60-90 minutes</span>
+            <span>Live rock and pop sets</span>
+            <span>Best for high-energy events</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="event-band-gallery">
+        <article>
+          <img src="https://images.unsplash.com/photo-1465847899084-d164df4dedc6?auto=format&fit=crop&w=800&q=80" alt="Rock Fusion Band performance" loading="lazy">
+          <h3>Rock Fusion Band</h3>
+          <p>High-energy rock and pop set for concerts, college fests, and night events.</p>
+          <div class="band-tags"><span class="tag">Rock</span><span class="tag">Pop</span><span class="tag">Live</span></div>
+          <p><b>Starting:</b> Rs. 40,000<br><b>Duration:</b> 1 hr, 2 hr, Full Event</p>
+          <div class="band-actions">
+            <button class="btn-outline" type="button" onclick="openBandDetails({name:'Rock Fusion Band',price:'Rs. 40,000',genres:['Rock','Pop','Live'],durations:['1 hr','2 hr','Full Event'],location:'Kolkata, West Bengal, Outstation',rating:'4.8',reviews:'120',img:'https://images.unsplash.com/photo-1465847899084-d164df4dedc6?auto=format&fit=crop&w=800&q=80',video:'https://www.youtube.com/embed/SAKvJzuPcxg',desc:'High-energy live band delivering rock anthems and modern hits. Perfect for concerts, college fests, and night events.'})">View Details</button>
+            <button class="btn-primary" type="button" onclick="bookNow('Rock Fusion Band')">Book</button>
+          </div>
+        </article>
+
+        <article>
+          <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=800&q=80" alt="DJ Night Beats performance" loading="lazy">
+          <h3>DJ Night Beats</h3>
+          <p>Dance-floor focused DJ setup for birthdays, parties, receptions, and youth events.</p>
+          <div class="band-tags"><span class="tag">DJ</span><span class="tag">Dance</span><span class="tag">Party</span></div>
+          <p><b>Starting:</b> Rs. 25,000<br><b>Duration:</b> 1 hr, 2 hr, Full Event</p>
+          <div class="band-actions">
+            <button class="btn-outline" type="button" onclick="openBandDetails({name:'DJ Night Beats',price:'Rs. 25,000',genres:['DJ','Dance','Party'],durations:['1 hr','2 hr','Full Event'],location:'Kolkata, West Bengal, Outstation',rating:'4.8',reviews:'120',img:'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=800&q=80',video:'https://www.youtube.com/embed/SAKvJzuPcxg',desc:'A party-ready DJ act for birthdays, receptions, private parties, and night events with energetic sound and lighting support.'})">View Details</button>
+            <button class="btn-primary" type="button" onclick="bookNow('DJ Night Beats')">Book</button>
+          </div>
+        </article>
+
+        <article>
+          <img src="https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?auto=format&fit=crop&w=800&q=80" alt="Wedding Melodies performance" loading="lazy">
+          <h3>Wedding Melodies</h3>
+          <p>Warm live music for wedding entries, receptions, family moments, and ceremonies.</p>
+          <div class="band-tags"><span class="tag">Wedding</span><span class="tag">Melody</span><span class="tag">Live</span></div>
+          <p><b>Starting:</b> Rs. 35,000<br><b>Duration:</b> 1 hr, 2 hr, Full Event</p>
+          <div class="band-actions">
+            <button class="btn-outline" type="button" onclick="openBandDetails({name:'Wedding Melodies',price:'Rs. 35,000',genres:['Wedding','Melody','Live'],durations:['1 hr','2 hr','Full Event'],location:'Kolkata, West Bengal, Outstation',rating:'4.8',reviews:'120',img:'https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?auto=format&fit=crop&w=800&q=80',video:'https://www.youtube.com/embed/SAKvJzuPcxg',desc:'Elegant live music for wedding ceremonies, receptions, couple entries, and family celebrations.'})">View Details</button>
+            <button class="btn-primary" type="button" onclick="bookNow('Wedding Melodies')">Book</button>
+          </div>
+        </article>
+
+        <article>
+          <img src="https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?auto=format&fit=crop&w=800&q=80" alt="Bollywood Live performance" loading="lazy">
+          <h3>Bollywood Live</h3>
+          <p>Popular Bollywood hits for weddings, festivals, society events, and public shows.</p>
+          <div class="band-tags"><span class="tag">Bollywood</span><span class="tag">Dance</span><span class="tag">Live</span></div>
+          <p><b>Starting:</b> Rs. 45,000<br><b>Duration:</b> 1 hr, 2 hr, Full Event</p>
+          <div class="band-actions">
+            <button class="btn-outline" type="button" onclick="openBandDetails({name:'Bollywood Live',price:'Rs. 45,000',genres:['Bollywood','Dance','Live'],durations:['1 hr','2 hr','Full Event'],location:'Kolkata, West Bengal, Outstation',rating:'4.8',reviews:'120',img:'https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?auto=format&fit=crop&w=800&q=80',video:'https://www.youtube.com/embed/SAKvJzuPcxg',desc:'A crowd-friendly Bollywood live act with popular hits for weddings, festivals, and large gatherings.'})">View Details</button>
+            <button class="btn-primary" type="button" onclick="bookNow('Bollywood Live')">Book</button>
+          </div>
+        </article>
+
+        <article>
+          <img src="https://images.unsplash.com/photo-1612225330812-01a9c6b355ec?auto=format&fit=crop&w=800&q=80" alt="Classical Strings performance" loading="lazy">
+          <h3>Classical Strings</h3>
+          <p>Refined instrumental and semi-classical music for elegant event settings.</p>
+          <div class="band-tags"><span class="tag">Classical</span><span class="tag">Instrumental</span><span class="tag">Elegant</span></div>
+          <p><b>Starting:</b> Rs. 20,000<br><b>Duration:</b> 1 hr, 2 hr, Full Event</p>
+          <div class="band-actions">
+            <button class="btn-outline" type="button" onclick="openBandDetails({name:'Classical Strings',price:'Rs. 20,000',genres:['Classical','Instrumental','Elegant'],durations:['1 hr','2 hr','Full Event'],location:'Kolkata, West Bengal, Outstation',rating:'4.8',reviews:'120',img:'https://images.unsplash.com/photo-1612225330812-01a9c6b355ec?auto=format&fit=crop&w=800&q=80',video:'https://www.youtube.com/embed/SAKvJzuPcxg',desc:'A refined classical and instrumental act for wedding ceremonies, formal functions, and premium gatherings.'})">View Details</button>
+            <button class="btn-primary" type="button" onclick="bookNow('Classical Strings')">Book</button>
+          </div>
+        </article>
+
+        <article>
+          <img src="https://images.unsplash.com/photo-1525201548942-d8732f6617a0?auto=format&fit=crop&w=800&q=80" alt="Acoustic Evenings performance" loading="lazy">
+          <h3>Acoustic Evenings</h3>
+          <p>Soft acoustic music for intimate celebrations, cafes, lounges, and private parties.</p>
+          <div class="band-tags"><span class="tag">Acoustic</span><span class="tag">Soft</span><span class="tag">Live</span></div>
+          <p><b>Starting:</b> Rs. 15,000<br><b>Duration:</b> 1 hr, 2 hr, Full Event</p>
+          <div class="band-actions">
+            <button class="btn-outline" type="button" onclick="openBandDetails({name:'Acoustic Evenings',price:'Rs. 15,000',genres:['Acoustic','Soft','Live'],durations:['1 hr','2 hr','Full Event'],location:'Kolkata, West Bengal, Outstation',rating:'4.8',reviews:'120',img:'https://images.unsplash.com/photo-1525201548942-d8732f6617a0?auto=format&fit=crop&w=800&q=80',video:'https://www.youtube.com/embed/SAKvJzuPcxg',desc:'Soft acoustic performances for intimate celebrations, cafes, lounge nights, and private events.'})">View Details</button>
+            <button class="btn-primary" type="button" onclick="bookNow('Acoustic Evenings')">Book</button>
+          </div>
+        </article>
+
+        <article>
+          <img src="https://images.unsplash.com/photo-1511192336575-5a79af67a629?auto=format&fit=crop&w=800&q=80" alt="Fusion Folk Collective performance" loading="lazy">
+          <h3>Fusion Folk Collective</h3>
+          <p>Folk-inspired live music with modern rhythm for cultural and festive events.</p>
+          <div class="band-tags"><span class="tag">Folk</span><span class="tag">Fusion</span><span class="tag">Cultural</span></div>
+          <p><b>Starting:</b> Rs. 35,000<br><b>Duration:</b> 1 hr, 2 hr, Full Event</p>
+          <div class="band-actions">
+            <button class="btn-outline" type="button" onclick="openBandDetails({name:'Fusion Folk Collective',price:'Rs. 35,000',genres:['Folk','Fusion','Cultural'],durations:['1 hr','2 hr','Full Event'],location:'Kolkata, West Bengal, Outstation',rating:'4.8',reviews:'120',img:'https://images.unsplash.com/photo-1511192336575-5a79af67a629?auto=format&fit=crop&w=800&q=80',video:'https://www.youtube.com/embed/SAKvJzuPcxg',desc:'A folk-fusion act for cultural programs, festive nights, carnivals, and community events.'})">View Details</button>
+            <button class="btn-primary" type="button" onclick="bookNow('Fusion Folk Collective')">Book</button>
+          </div>
+        </article>
+
+        <article>
+          <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=800&q=80" alt="Corporate Groove performance" loading="lazy">
+          <h3>Corporate Groove</h3>
+          <p>Professional live entertainment for office parties, launches, and formal gatherings.</p>
+          <div class="band-tags"><span class="tag">Corporate</span><span class="tag">Pop</span><span class="tag">Live</span></div>
+          <p><b>Starting:</b> Rs. 50,000<br><b>Duration:</b> 1 hr, 2 hr, Full Event</p>
+          <div class="band-actions">
+            <button class="btn-outline" type="button" onclick="openBandDetails({name:'Corporate Groove',price:'Rs. 50,000',genres:['Corporate','Pop','Live'],durations:['1 hr','2 hr','Full Event'],location:'Kolkata, West Bengal, Outstation',rating:'4.8',reviews:'120',img:'https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=800&q=80',video:'https://www.youtube.com/embed/SAKvJzuPcxg',desc:'Polished live entertainment for office celebrations, product launches, annual days, and formal gatherings.'})">View Details</button>
+            <button class="btn-primary" type="button" onclick="bookNow('Corporate Groove')">Book</button>
+          </div>
+        </article>
+
+        <article>
+          <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80" alt="Carnival Rhythm Crew performance" loading="lazy">
+          <h3>Carnival Rhythm Crew</h3>
+          <p>Interactive live rhythm set for carnivals, school events, and outdoor gatherings.</p>
+          <div class="band-tags"><span class="tag">Carnival</span><span class="tag">Rhythm</span><span class="tag">Outdoor</span></div>
+          <p><b>Starting:</b> Rs. 28,000<br><b>Duration:</b> 1 hr, 2 hr, Full Event</p>
+          <div class="band-actions">
+            <button class="btn-outline" type="button" onclick="openBandDetails({name:'Carnival Rhythm Crew',price:'Rs. 28,000',genres:['Carnival','Rhythm','Outdoor'],durations:['1 hr','2 hr','Full Event'],location:'Kolkata, West Bengal, Outstation',rating:'4.8',reviews:'120',img:'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80',video:'https://www.youtube.com/embed/SAKvJzuPcxg',desc:'Interactive rhythm and live music for carnivals, school events, society functions, and outdoor gatherings.'})">View Details</button>
+            <button class="btn-primary" type="button" onclick="bookNow('Carnival Rhythm Crew')">Book</button>
+          </div>
+        </article>
+
+        <article>
+          <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=800&q=80" alt="Premium Live Ensemble performance" loading="lazy">
+          <h3>Premium Live Ensemble</h3>
+          <p>A complete live ensemble for premium weddings, receptions, and headline shows.</p>
+          <div class="band-tags"><span class="tag">Premium</span><span class="tag">Ensemble</span><span class="tag">Headline</span></div>
+          <p><b>Starting:</b> Rs. 75,000<br><b>Duration:</b> 1 hr, 2 hr, Full Event</p>
+          <div class="band-actions">
+            <button class="btn-outline" type="button" onclick="openBandDetails({name:'Premium Live Ensemble',price:'Rs. 75,000',genres:['Premium','Ensemble','Headline'],durations:['1 hr','2 hr','Full Event'],location:'Kolkata, West Bengal, Outstation',rating:'4.8',reviews:'120',img:'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=800&q=80',video:'https://www.youtube.com/embed/SAKvJzuPcxg',desc:'A full live ensemble for premium weddings, receptions, stage shows, and headline event performances.'})">View Details</button>
+            <button class="btn-primary" type="button" onclick="bookNow('Premium Live Ensemble')">Book</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="booking-section" id="booking">
+      <div class="booking-container">
+        <h2>Book Your Event Now</h2>
+        <p>Tell us the event, date, and preferred artist. We will confirm availability and pricing on WhatsApp.</p>
+
+        <div class="booking-box">
+          <div class="booking-info">
+            <h3>Why Book With Us?</h3>
+            <ul>
+              <li>Professional and verified artists</li>
+              <li>On-time setup and coordination</li>
+              <li>Custom music and event packages</li>
+              <li>Quick WhatsApp confirmation</li>
+            </ul>
+          </div>
+
+          <div class="booking-action">
+            <h3>Quick Booking</h3>
+            <p>Select a band or event requirement and send your details.</p>
+
+            <form id="bookingForm" class="booking-form">
+              <input type="text" id="bookName" placeholder="Your Name" required>
+              <input type="tel" id="bookPhone" placeholder="Phone Number" required>
+              <select id="bookBand" required>
+                <option value="" disabled selected>Select Band / Event</option>
+                <option value="Wedding Event Package">Wedding Event Package</option>
+                <option value="Birthday Event Package">Birthday Event Package</option>
+                <option value="Carnival Event Package">Carnival Event Package</option>
+                <option value="Rock Fusion Band">Rock Fusion Band</option>
+                <option value="DJ Night Beats">DJ Night Beats</option>
+                <option value="Wedding Melodies">Wedding Melodies</option>
+                <option value="Bollywood Live">Bollywood Live</option>
+                <option value="Classical Strings">Classical Strings</option>
+                <option value="Acoustic Evenings">Acoustic Evenings</option>
+                <option value="Fusion Folk Collective">Fusion Folk Collective</option>
+                <option value="Corporate Groove">Corporate Groove</option>
+                <option value="Carnival Rhythm Crew">Carnival Rhythm Crew</option>
+                <option value="Premium Live Ensemble">Premium Live Ensemble</option>
+              </select>
+              <input type="date" id="bookDate" required>
+
+              <button type="submit" class="whatsapp-btn">Submit Booking</button>
+              <p id="bookMsg"></p>
+
+              <button type="button" class="whatsapp-btn" onclick="openWhatsAppFromForm()" style="margin-top:10px;">
+                Chat on WhatsApp
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="myBookings" class="booking-section" style="display:none;">
+      <div class="booking-container">
+        <h2>My Bookings</h2>
+        <p id="myBookingsMsg"></p>
+        <div id="myBookingsList"></div>
+      </div>
+    </section>
+
+    <section class="events-cta">
+      <h2>Ready to plan your event?</h2>
+      <p>Share your event type, date, location, and budget. We will suggest the best package.</p>
+      <a class="login-btn" href="https://wa.me/919903634178?text=Hello%2C%20I%20want%20to%20book%20an%20event%20with%20SPARSH%20Group%20of%20Events.">Book on WhatsApp</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-box">
+        <h3>SPARSH Group of Events</h3>
+        <p>Professional event planning, musical bands, and entertainment services for every celebration.</p>
+      </div>
+      <div class="footer-box">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="booking.html">Book Slot</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="#wedding">Wedding Packages</a></li>
+          <li><a href="#bands">Musical Bands</a></li>
+        </ul>
+      </div>
+      <div class="footer-box">
+        <h4>Contact Us</h4>
+        <p>Kolkata, India</p>
+        <p>+91 8420605823</p>
+        <p>souravdhara087@gmail.com</p>
+      </div>
+      <div class="footer-box">
+        <h4>Follow Us</h4>
+        <div class="social-links">
+          <a href="https://www.facebook.com/sourav.dhara.54738">Facebook</a>
+          <a href="https://www.instagram.com/souravjr_11/">Instagram</a>
+          <a href="#">YouTube</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; 2026 SPARSH Group of Events. All Rights Reserved.</div>
+  </footer>
+
+  <div class="login-modal" id="loginModal">
+    <div class="login-box">
+      <span class="close-btn" onclick="closeLogin()">X</span>
+      <h2>User Login</h2>
+
+      <form id="loginForm">
+        <button type="button" class="google-btn" onclick="googleLogin()">
+          <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google">
+          Continue with Google
+        </button>
+
+        <div class="divider"><span>OR</span></div>
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <input type="password" id="confirmPassword" placeholder="Confirm Password" style="display:none;">
+        <button type="submit" id="loginSubmitBtn">Login</button>
+        <button type="button" id="registerBtn" class="register-btn" style="display:none;">Create Account</button>
+        <p class="toggle-auth"><a href="javascript:void(0)" id="toggleRegister">Create new account</a></p>
+        <p id="loginMsg"></p>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal" id="bandModal" style="display:none;">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeBandDetails()">X</button>
+
+      <div class="modal-grid">
+        <div class="modal-media">
+          <div class="modal-image-container">
+            <img id="mImg" alt="Band">
+            <div class="modal-media-badge" id="mBadge">Live Band Performance</div>
+          </div>
+          <video id="mVideo" controls style="display:none;"></video>
+          <a id="mYtBtn" href="https://youtu.be/SAKvJzuPcxg" target="_blank" rel="noopener noreferrer" class="modal-video-link" style="display:none;">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 22c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 2c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"/></svg>
+            Watch Video Performance on YouTube ↗
+          </a>
+        </div>
+
+        <div class="modal-info">
+          <h2 id="mName"></h2>
+          <div class="modal-rating">
+            <span id="mStars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span id="mRatingText"></span>
+          </div>
+          <p><b>Starting Price:</b> <span id="mPrice"></span></p>
+          <p><b>Genres:</b> <span id="mGenres"></span></p>
+          <p><b>Duration Options:</b> <span id="mDurations"></span></p>
+          <p><b>Location:</b> <span id="mLocation"></span></p>
+          <p id="mDesc" class="modal-desc"></p>
+          <button class="btn-primary" id="mBookBtn">Book This Band</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="celebrationLayer" class="celebrate-layer" aria-hidden="true"></div>
+
+  <script type="module" src="js/firebase-auth.js?v=80"></script>
+  <script defer src="./js/main.js?v=70"></script>
+</body>
+</html>
