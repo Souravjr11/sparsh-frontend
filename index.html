@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Event Management Company</title>
+<title>EVENTIQUE | Premier Event Management & Production</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -12,7 +12,7 @@
 <div id="pageLoader" class="page-loader">
     <div class="loader-box">
       <div class="spinner"></div>
-      <p>Loading SPARSH GROUP OF EVENTS...</p>
+      <p>Loading EVENTIQUE GROUP OF EVENTS...</p>
     </div>
   </div>
 <!-- HEADER -->
@@ -20,22 +20,27 @@
     <div class="nav-container">
   
       <!-- LEFT: LOGO -->
-      <div class="logo">
-        <img src="images/LOGO MAIN 3..png" alt="My Event Company">
-        <span class = "company-name">SPARSH GROUP OF EVENTS</span>
-      </div>
+      <a class="logo" href="index.html" aria-label="EVENTIQUE Group of Events home">
+        <img src="images/LOGO MAIN 3..png" alt="EVENTIQUE Group of Events">
+        <span class="company-name">EVENTIQUE GROUP OF EVENTS</span>
+      </a>
   
       <!-- CENTER: MENU -->
-      <nav id="navMenu">
-  <a href="#about">About</a>
-  <a href="events.html">Events</a>
-  <a href="booking.html">Book</a>
-  <a href="gallery.html">Gallery</a>
-  <a href="#why-us">Why Us</a>
-  <a href="#testimonials">Testimonials</a>
-  <a href="#faq">FAQ</a>
-</nav>
-
+      <nav id="navMenu" aria-label="Primary navigation">
+        <div class="nav-drawer-header">
+          <span class="drawer-title">
+            <img src="images/LOGO MAIN 3..png" alt="" style="width:28px;height:28px;border-radius:50%;">
+            EVENTIQUE Menu
+          </span>
+          <button type="button" class="nav-close-btn" aria-label="Close menu" onclick="closeMobileMenu()">✕</button>
+        </div>
+        <a href="index.html" class="active-link">Home</a>
+        <a href="about.html">About</a>
+        <a href="events.html">Events</a>
+        <a href="booking.html">Book</a>
+        <a href="gallery.html">Gallery</a>
+      </nav>
+ 
   
       <!-- RIGHT: LOGIN -->
       <div class="nav-right">
@@ -62,9 +67,9 @@
 <!-- ===== LOGO SECTION ===== -->
 <section class="logo-section">
   <div class="logo-wrap fade-in">
-    <img src="images/LOGO MAIN 3..png" alt="Sparsh Events Logo" class="main-logo">
+    <img src="images/LOGO MAIN 3..png" alt="EVENTIQUE Events Logo" class="main-logo">
     <div class="logo-text">
-      <div class="company-title">SPARSH GROUP OF EVENTS</div>
+      <div class="company-title">EVENTIQUE GROUP OF EVENTS</div>
       <div class="company-tagline">Weddings • Birthdays • Carnivals • Live Bands</div>
     </div>
   </div>
@@ -80,15 +85,70 @@
     </p>
   
     <h3 class="works-title">Our Previous Works</h3>
+    <p class="works-subtitle">Swipe or tap arrows to explore our featured celebrations</p>
   
-    <div class="works-scroll">
-      <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=600&q=80" alt="Wedding Floral Stage & Decor" loading="lazy">
-      <img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?auto=format&fit=crop&w=600&q=80" alt="Birthday Party Theme Setup" loading="lazy">
-      <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=600&q=80" alt="Carnival & Festive Fair" loading="lazy">
-      <img src="https://images.unsplash.com/photo-1465847899084-d164df4dedc6?auto=format&fit=crop&w=600&q=80" alt="Live Rock Band Performance" loading="lazy">
-      <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=600&q=80" alt="DJ Night & Laser Show" loading="lazy">
-      <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=600&q=80" alt="Royal Wedding Grand Entry" loading="lazy">
+    <div class="works-slider-wrapper">
+      <button class="works-nav-btn prev-btn" id="worksPrevBtn" aria-label="Previous work" onclick="scrollWorksSlider(-1)">
+        &#10094;
+      </button>
+
+      <div class="works-scroll" id="worksSliderTrack">
+        <div class="work-slide-item">
+          <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80" alt="Royal Wedding Floral Stage & Decor" loading="lazy">
+          <div class="work-slide-overlay">
+            <span class="work-tag">💍 Royal Weddings</span>
+            <h4>Grand Stage & Floral Decor</h4>
+          </div>
+        </div>
+
+        <div class="work-slide-item">
+          <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=800&q=80" alt="Theme Birthday Party Setup" loading="lazy">
+          <div class="work-slide-overlay">
+            <span class="work-tag">🎂 Theme Birthdays</span>
+            <h4>Custom Lighting & Games</h4>
+          </div>
+        </div>
+
+        <div class="work-slide-item">
+          <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=800&q=80" alt="Carnival & Festive Fair" loading="lazy">
+          <div class="work-slide-overlay">
+            <span class="work-tag">🎡 College & Carnivals</span>
+            <h4>Festival Stage & Fair Stalls</h4>
+          </div>
+        </div>
+
+        <div class="work-slide-item">
+          <img src="https://images.unsplash.com/photo-1465847899084-d164df4dedc6?auto=format&fit=crop&w=800&q=80" alt="Live Rock Band Performance" loading="lazy">
+          <div class="work-slide-overlay">
+            <span class="work-tag">🎸 Live Concerts</span>
+            <h4>Rock & Fusion Bands</h4>
+          </div>
+        </div>
+
+        <div class="work-slide-item">
+          <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=800&q=80" alt="DJ Night & Laser Show" loading="lazy">
+          <div class="work-slide-overlay">
+            <span class="work-tag">🎧 DJ & EDM Nights</span>
+            <h4>Intelligent Laser & Sound</h4>
+          </div>
+        </div>
+
+        <div class="work-slide-item">
+          <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=800&q=80" alt="Royal Wedding Grand Entry" loading="lazy">
+          <div class="work-slide-overlay">
+            <span class="work-tag">✨ Special Entries</span>
+            <h4>Pyrotechnics & Cold Pyro</h4>
+          </div>
+        </div>
+      </div>
+
+      <button class="works-nav-btn next-btn" id="worksNextBtn" aria-label="Next work" onclick="scrollWorksSlider(1)">
+        &#10095;
+      </button>
     </div>
+
+    <!-- SLIDER DOTS INDICATOR -->
+    <div class="works-slider-dots" id="worksSliderDots"></div>
   </section>
 
   <!-- VIDEO SECTION -->
@@ -99,7 +159,7 @@
     <div class="video-wrapper">
       <div class="yt-video-card">
         <a href="https://youtu.be/SAKvJzuPcxg" target="_blank" rel="noopener noreferrer" class="yt-video-card__cover" aria-label="Watch Live Performance on YouTube">
-          <img src="https://i.ytimg.com/vi/SAKvJzuPcxg/maxresdefault.jpg" alt="SPARSH Live Event Performance" class="yt-video-card__thumb">
+          <img src="https://i.ytimg.com/vi/SAKvJzuPcxg/maxresdefault.jpg" alt="EVENTIQUE Live Event Performance" class="yt-video-card__thumb">
           <div class="yt-video-card__overlay">
             <div class="yt-play-btn">
               <svg viewBox="0 0 68 48" class="yt-play-svg">
@@ -151,7 +211,7 @@
   </button>
 
   <button class="service-card event-card" data-panel="carnivalPanel"
-    style="--bg:url('https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=800&q=80')" type="button"
+    style="--bg:url('https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=800&q=80')" type="button"
     onclick="togglePanel('carnivalPanel')">
     <div class="event-card__content">
       <div class="event-card__title">Carnival</div>
@@ -160,7 +220,7 @@
   </button>
 
   <button class="service-card event-card band-card-cta" data-panel="bands"
-    style="--bg:url('https://images.unsplash.com/photo-1465847899084-d164df4dedc6?auto=format&fit=crop&w=800&q=80')" type="button"
+    style="--bg:url('https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=800&q=80')" type="button"
     onclick="openBands()">
     <div class="event-card__content">
       <div class="event-card__title">Musical Bands</div>
@@ -805,7 +865,7 @@
       <!-- 8. Corporate Groove -->
       <div class="band-card">
         <div class="band-media">
-          <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=800&q=80" alt="Corporate Groove" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=800&q=80" alt="Corporate Groove" loading="lazy">
         </div>
         <div class="band-content">
           <div class="band-head">
@@ -841,8 +901,8 @@
                 location:'Kolkata • West Bengal • Outstation',
                 rating:'4.9',
                 reviews:'125',
-                img:'https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=800&q=80',
-                video:'https://www.youtube.com/embed/SAKvJzuPcxg',
+                img:'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=800&q=80',
+                video:'https://youtu.be/SAKvJzuPcxg',
                 desc:'Polished live entertainment for office celebrations, product launches, annual days, and formal gatherings.'
               })">
               View Details
@@ -857,7 +917,7 @@
       <!-- 9. Carnival Rhythm Crew -->
       <div class="band-card">
         <div class="band-media">
-          <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80" alt="Carnival Rhythm Crew" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?auto=format&fit=crop&w=800&q=80" alt="Carnival Rhythm Crew" loading="lazy">
         </div>
         <div class="band-content">
           <div class="band-head">
@@ -893,8 +953,8 @@
                 location:'Kolkata • West Bengal • Outstation',
                 rating:'4.8',
                 reviews:'98',
-                img:'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80',
-                video:'https://www.youtube.com/embed/SAKvJzuPcxg',
+                img:'https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?auto=format&fit=crop&w=800&q=80',
+                video:'https://youtu.be/SAKvJzuPcxg',
                 desc:'Interactive rhythm and live music for carnivals, school events, society functions, and outdoor gatherings.'
               })">
               View Details
@@ -1061,12 +1121,12 @@
     <p class="gallery-sub">Some moments from our previous shows and events.</p>
 
     <div class="gallery-grid">
-      <a href="gallery.html"><img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=600&q=80" alt="Grand Wedding Floral Stage" loading="lazy"></a>
-      <a href="gallery.html"><img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?auto=format&fit=crop&w=600&q=80" alt="Theme Birthday Setup" loading="lazy"></a>
-      <a href="gallery.html"><img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=600&q=80" alt="Grand Carnival & Fair" loading="lazy"></a>
-      <a href="gallery.html"><img src="https://images.unsplash.com/photo-1465847899084-d164df4dedc6?auto=format&fit=crop&w=600&q=80" alt="Rock Fusion Band Live Show" loading="lazy"></a>
-      <a href="gallery.html"><img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=600&q=80" alt="Concert Stage & Laser Show" loading="lazy"></a>
-      <a href="gallery.html"><img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=600&q=80" alt="Royal Wedding Grand Entry" loading="lazy"></a>
+      <a href="gallery.html"><img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=600&q=80" alt="Outdoor Fairy Lights Wedding Canopy" loading="lazy"></a>
+      <a href="gallery.html"><img src="https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=600&q=80" alt="Theme Birthday Setup" loading="lazy"></a>
+      <a href="gallery.html"><img src="https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=600&q=80" alt="Grand Carnival & Fair" loading="lazy"></a>
+      <a href="gallery.html"><img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=600&q=80" alt="Arena Live Concert" loading="lazy"></a>
+      <a href="gallery.html"><img src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?auto=format&fit=crop&w=600&q=80" alt="Concert Stage & Laser Show" loading="lazy"></a>
+      <a href="gallery.html"><img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=600&q=80" alt="Royal Wedding Grand Entry" loading="lazy"></a>
     </div>
 
     <div style="text-align: center; margin-top: 30px;">
@@ -1136,51 +1196,101 @@
   <footer class="site-footer">
     <div class="footer-container">
   
-      <!-- COMPANY INFO -->
-      <div class="footer-box">
-        <h3>SPARSH Group of Events</h3>
-        <p>
-          We provide professional musical bands and event entertainment
-          services for weddings, concerts, corporate events, and private parties.
+      <!-- BRAND & MISSION -->
+      <div class="footer-box footer-brand-box">
+        <div class="footer-logo-row">
+          <img src="images/LOGO MAIN 3..png" alt="EVENTIQUE Logo" class="footer-brand-logo" loading="lazy">
+          <div>
+            <h3 class="footer-brand-title">EVENTIQUE</h3>
+            <span class="footer-brand-sub">Group of Events</span>
+          </div>
+        </div>
+        <p class="footer-brand-desc">
+          Premier event planning, signature musical bands, stage decor, and sound &amp; lighting production for every celebration across India.
         </p>
+        <div class="footer-badge-pill">
+          <span>✨ 500+ Celebrations Managed</span>
+        </div>
       </div>
   
       <!-- QUICK LINKS -->
       <div class="footer-box">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="events.html">Events</a></li>
-          <li><a href="booking.html">Book Slot</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="javascript:void(0)" onclick="openLogin()">Login</a></li>
+        <h4>Navigation</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="events.html">Event Packages</a></li>
+          <li><a href="booking.html">Book Online</a></li>
+          <li><a href="gallery.html">Portfolio &amp; Gallery</a></li>
+          <li><a href="javascript:void(0)" onclick="openLogin()">Account Login</a></li>
+        </ul>
+      </div>
+
+      <!-- EVENT SPECIALITIES -->
+      <div class="footer-box">
+        <h4>Specialities</h4>
+        <ul class="footer-links">
+          <li><a href="events.html#wedding">💍 Royal Weddings</a></li>
+          <li><a href="events.html#birthday">🎂 Theme Birthdays</a></li>
+          <li><a href="events.html#carnival">🎡 Carnivals &amp; Fests</a></li>
+          <li><a href="#bands">🎸 Live Musical Bands</a></li>
+          <li><a href="#booking">🎧 DJ &amp; Laser Shows</a></li>
         </ul>
       </div>
   
-      <!-- CONTACT -->
-      <div class="footer-box">
+      <!-- CONTACT & SOCIALS -->
+      <div class="footer-box footer-contact-box">
         <h4>Contact Us</h4>
-        <p>📍 Kolkata, India</p>
-        <p>📞 +91 8420605823</p>
-        <p>✉️ souravdhara087@gmail.com</p>
-      </div>
-  
-      <!-- SOCIAL -->
-      <div class="footer-box">
-        <h4>Follow Us</h4>
-        <div class="social-links">
-          <a href="#">🌐 Website</a>
-          <a href="https://www.facebook.com/sourav.dhara.54738" target="_blank" rel="noopener">📘 Facebook</a>
-          <a href="https://www.instagram.com/souravjr_11/" target="_blank" rel="noopener">📸 Instagram</a>
-          <a href="#">▶️ YouTube</a>
+        <div class="footer-contact-list">
+          <p class="footer-contact-item">
+            <span class="footer-contact-icon">📍</span>
+            <span>Kolkata, West Bengal, India</span>
+          </p>
+          <p class="footer-contact-item">
+            <span class="footer-contact-icon">📞</span>
+            <a href="tel:+918420605823">+91 8420605823</a>
+          </p>
+          <p class="footer-contact-item">
+            <span class="footer-contact-icon">✉️</span>
+            <a href="mailto:souravdhara087@gmail.com">souravdhara087@gmail.com</a>
+          </p>
+        </div>
+
+        <div class="footer-social-wrap">
+          <span class="footer-social-label">Connect With Us</span>
+          <div class="footer-social-icons">
+            <a href="https://www.facebook.com/sourav.dhara.54738" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="social-icon-btn facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/souravjr_11/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-icon-btn instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="https://youtu.be/SAKvJzuPcxg" target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="social-icon-btn youtube">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+            <a href="https://wa.me/918420605823" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="social-icon-btn whatsapp">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            </a>
+          </div>
         </div>
       </div>
   
     </div>
   
+    <!-- BOTTOM BAR -->
     <div class="footer-bottom">
-      &copy; 2026 SPARSH Group of Events. All Rights Reserved.
+      <div class="footer-bottom-container">
+        <p class="footer-copy">&copy; 2026 EVENTIQUE Group of Events. All Rights Reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="about.html">About Us</a>
+          <span>•</span>
+          <a href="events.html">Services</a>
+          <span>•</span>
+          <a href="booking.html">Booking</a>
+          <span>•</span>
+          <a href="#top" class="footer-back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'}); return false;">↑ Back to Top</a>
+        </div>
+      </div>
     </div>
   </footer>
 

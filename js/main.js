@@ -242,38 +242,145 @@ document.addEventListener("DOMContentLoaded", function () {
     setTimeout(() => loader.remove(), 500);
   });
 
-  // Mobile menu
-  const navMenu = document.getElementById("navMenu");
-  const overlay = document.getElementById("overlay");
-  const menuIcon = document.querySelector(".menu-icon");
-
-  function closeMobileMenu() {
-    navMenu?.classList.remove("active");
-    overlay?.classList.remove("active");
-    menuIcon?.setAttribute("aria-expanded", "false");
+  // ===============================
+  // MOBILE HAMBURGER & DRAWER MENU
+  // ===============================
+  window.closeMobileMenu = function () {
+    const navMenu = document.getElementById("navMenu");
+    const overlay = document.getElementById("overlay");
+    const menuIcon = document.querySelector(".menu-icon");
+    if (navMenu) navMenu.classList.remove("active");
+    if (overlay) overlay.classList.remove("active");
+    if (menuIcon) menuIcon.setAttribute("aria-expanded", "false");
     document.body.classList.remove("nav-open");
-  }
+  };
 
-  window.toggleMenu = function () {
-    if (!navMenu || !overlay) return;
+  window.toggleMenu = function (e) {
+    if (e && typeof e.stopPropagation === "function") e.stopPropagation();
+    const navMenu = document.getElementById("navMenu");
+    const overlay = document.getElementById("overlay");
+    const menuIcon = document.querySelector(".menu-icon");
+    if (!navMenu) return;
+
     const isOpen = navMenu.classList.toggle("active");
-    overlay.classList.toggle("active", isOpen);
-    menuIcon?.setAttribute("aria-expanded", String(isOpen));
+    if (overlay) overlay.classList.toggle("active", isOpen);
+    if (menuIcon) menuIcon.setAttribute("aria-expanded", String(isOpen));
     document.body.classList.toggle("nav-open", isOpen);
   };
 
-  overlay?.addEventListener("click", () => {
-    closeMobileMenu();
-  });
+  const overlayEl = document.getElementById("overlay");
+  if (overlayEl) {
+    overlayEl.addEventListener("click", () => {
+      window.closeMobileMenu();
+    });
+  }
 
+  // Close when clicking any nav link
   document.querySelectorAll("#navMenu a").forEach(a => {
     a.addEventListener("click", () => {
-      closeMobileMenu();
+      window.closeMobileMenu();
     });
+  });
+
+  // Close when pressing Escape key
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      window.closeMobileMenu();
+    }
+  });
+
+  // Close when resizing back to desktop screen
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 960) {
+      window.closeMobileMenu();
+    }
   });
 
   // Stop dropdown from hiding on pill click
   stopCloseOnInnerClicks();
+
+  /* ===============================
+     HOMEPAGE WORKS SLIDER
+  =============================== */
+  const worksTrack = document.getElementById("worksSliderTrack");
+  const worksDotsContainer = document.getElementById("worksSliderDots");
+
+  window.scrollWorksSlider = function (direction) {
+    if (!worksTrack) return;
+    const firstCard = worksTrack.querySelector(".work-slide-item");
+    const cardWidth = firstCard ? firstCard.offsetWidth + 18 : 320;
+    worksTrack.scrollBy({
+      left: direction * cardWidth,
+      behavior: "smooth"
+    });
+  };
+
+  if (worksTrack) {
+    const slides = worksTrack.querySelectorAll(".work-slide-item");
+    if (slides.length > 0 && worksDotsContainer) {
+      worksDotsContainer.innerHTML = "";
+      slides.forEach((_, idx) => {
+        const dot = document.createElement("button");
+        dot.type = "button";
+        dot.className = `works-dot ${idx === 0 ? "active" : ""}`;
+        dot.setAttribute("aria-label", `Go to slide ${idx + 1}`);
+        dot.addEventListener("click", () => {
+          const targetCard = slides[idx];
+          if (targetCard) {
+            worksTrack.scrollTo({
+              left: targetCard.offsetLeft - worksTrack.offsetLeft,
+              behavior: "smooth"
+            });
+          }
+        });
+        worksDotsContainer.appendChild(dot);
+      });
+
+      // Update active dot on scroll
+      worksTrack.addEventListener("scroll", () => {
+        const scrollLeft = worksTrack.scrollLeft;
+        const trackWidth = worksTrack.offsetWidth;
+        const dots = worksDotsContainer.querySelectorAll(".works-dot");
+
+        slides.forEach((slide, idx) => {
+          const slideLeft = slide.offsetLeft - worksTrack.offsetLeft;
+          const slideWidth = slide.offsetWidth;
+          if (scrollLeft >= slideLeft - trackWidth / 3 && scrollLeft < slideLeft + slideWidth) {
+            dots.forEach(d => d.classList.remove("active"));
+            if (dots[idx]) dots[idx].classList.add("active");
+          }
+        });
+      }, { passive: true });
+
+      // Autoplay slider every 4s, pauses on hover / interaction
+      let autoPlayInterval = null;
+      function startAutoplay() {
+        if (autoPlayInterval) return;
+        autoPlayInterval = setInterval(() => {
+          if (worksTrack.scrollLeft + worksTrack.clientWidth >= worksTrack.scrollWidth - 15) {
+            worksTrack.scrollTo({ left: 0, behavior: "smooth" });
+          } else {
+            window.scrollWorksSlider(1);
+          }
+        }, 4000);
+      }
+
+      function stopAutoplay() {
+        if (autoPlayInterval) {
+          clearInterval(autoPlayInterval);
+          autoPlayInterval = null;
+        }
+      }
+
+      startAutoplay();
+      worksTrack.addEventListener("mouseenter", stopAutoplay);
+      worksTrack.addEventListener("mouseleave", startAutoplay);
+      worksTrack.addEventListener("touchstart", stopAutoplay, { passive: true });
+      worksTrack.addEventListener("touchend", () => {
+        setTimeout(startAutoplay, 3000);
+      }, { passive: true });
+    }
+  }
 
   /* ===== AUTH UI ===== */
   const loginForm = document.getElementById("loginForm");
@@ -466,38 +573,15 @@ document.addEventListener("DOMContentLoaded", function () {
     if (badge) badge.style.display = "none";
   });
 
-  /* ===== Book Now shortcut & Category Selector ===== */
+  /* ===== Book Now shortcut ===== */
   window.bookNow = function (bandName) {
-    const bandSelect = document.getElementById("bookBand");
-    const bookingEl = document.getElementById("booking");
-
-    if (bandSelect && bookingEl) {
-      for (let i = 0; i < bandSelect.options.length; i++) {
-        if (bandSelect.options[i].value.toLowerCase().includes(bandName.toLowerCase())) {
-          bandSelect.selectedIndex = i;
-          break;
-        }
-      }
-      const y = bookingEl.getBoundingClientRect().top + window.pageYOffset - 90;
-      window.scrollTo({ top: y, behavior: "smooth" });
-    } else {
-      window.location.href = `booking.html?band=${encodeURIComponent(bandName)}#booking`;
+    if (!isLoggedIn()) {
+      requireLogin("Login first to book a band.");
+      return;
     }
-  };
 
-  window.selectEventCategory = function (categoryName, btnEl) {
     const bandSelect = document.getElementById("bookBand");
-    if (bandSelect) {
-      for (let i = 0; i < bandSelect.options.length; i++) {
-        const opt = bandSelect.options[i];
-        if (opt.value.toLowerCase().includes(categoryName.toLowerCase())) {
-          bandSelect.selectedIndex = i;
-          break;
-        }
-      }
-    }
-    document.querySelectorAll(".booking-cat-card").forEach(c => c.classList.remove("active"));
-    if (btnEl) btnEl.classList.add("active");
+    if (bandSelect) bandSelect.value = bandName;
 
     const bookingEl = document.getElementById("booking");
     if (bookingEl) {
@@ -505,30 +589,6 @@ document.addEventListener("DOMContentLoaded", function () {
       window.scrollTo({ top: y, behavior: "smooth" });
     }
   };
-
-  // Set min date on date picker to today
-  const dateInput = document.getElementById("bookDate");
-  if (dateInput) {
-    const today = new Date().toISOString().split("T")[0];
-    dateInput.min = today;
-  }
-
-  // Pre-fill selection if coming with ?band= or ?package=
-  try {
-    const urlParams = new URLSearchParams(window.location.search);
-    const bandParam = urlParams.get("band") || urlParams.get("package") || urlParams.get("event");
-    if (bandParam) {
-      const bandSelect = document.getElementById("bookBand");
-      if (bandSelect) {
-        for (let i = 0; i < bandSelect.options.length; i++) {
-          if (bandSelect.options[i].value.toLowerCase().includes(bandParam.toLowerCase())) {
-            bandSelect.selectedIndex = i;
-            break;
-          }
-        }
-      }
-    }
-  } catch (e) {}
 
   /* ===== Booking form ===== */
   const bookingForm = document.getElementById("bookingForm");

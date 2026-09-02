@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Events | SPARSH Group of Events</title>
+  <title>Events | EVENTIQUE Group of Events</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="events-page">
@@ -11,19 +11,24 @@
 
   <header class="navbar">
     <div class="nav-container">
-      <a class="logo" href="index.html" aria-label="SPARSH Group of Events home">
-        <img src="images/LOGO MAIN 3..png" alt="SPARSH Group of Events">
-        <span class="company-name">SPARSH GROUP OF EVENTS</span>
+      <a class="logo" href="index.html" aria-label="EVENTIQUE Group of Events home">
+        <img src="images/LOGO MAIN 3..png" alt="EVENTIQUE Group of Events">
+        <span class="company-name">EVENTIQUE GROUP OF EVENTS</span>
       </a>
 
       <nav id="navMenu" aria-label="Primary navigation">
-        <a href="index.html#about">About</a>
+        <div class="nav-drawer-header">
+          <span class="drawer-title">
+            <img src="images/LOGO MAIN 3..png" alt="" style="width:28px;height:28px;border-radius:50%;">
+            EVENTIQUE Menu
+          </span>
+          <button type="button" class="nav-close-btn" aria-label="Close menu" onclick="closeMobileMenu()">✕</button>
+        </div>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
         <a href="events.html" class="active-link">Events</a>
         <a href="booking.html">Book</a>
         <a href="gallery.html">Gallery</a>
-        <a href="index.html#why-us">Why Us</a>
-        <a href="index.html#testimonials">Testimonials</a>
-        <a href="index.html#faq">FAQ</a>
       </nav>
 
       <div class="nav-right">
@@ -37,7 +42,7 @@
   <main>
     <section class="events-hero">
       <div class="events-hero__media">
-        <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1200&q=80" alt="Decorated luxury event setup" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1200&q=80" alt="Decorated luxury event setup" loading="lazy">
       </div>
       <div class="events-hero__content">
         <p class="section-kicker">Complete event planning</p>
@@ -58,7 +63,7 @@
     <section class="event-detail-section" id="wedding">
       <div class="event-detail-grid">
         <div class="event-detail-media">
-          <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=1200&q=80" alt="Wedding decoration and stage setup" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80" alt="Wedding decoration and stage setup" loading="lazy">
         </div>
         <div class="event-detail-copy">
           <p class="section-kicker">Decor &bull; Stage &bull; DJ &bull; Live</p>
@@ -137,7 +142,7 @@
     <section class="event-detail-section alt" id="birthday">
       <div class="event-detail-grid">
         <div class="event-detail-media">
-          <img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?auto=format&fit=crop&w=1200&q=80" alt="Birthday event decoration" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=1200&q=80" alt="Birthday event decoration" loading="lazy">
         </div>
         <div class="event-detail-copy">
           <p class="section-kicker">Theme &bull; Games &bull; DJ &bull; Host</p>
@@ -174,28 +179,28 @@
 
         <article class="event-package-card featured">
           <span class="package-label">Most Popular</span>
-          <h3>Birthday Fun</h3>
-          <p>Music-led party package with DJ, games, and hosting.</p>
+          <h3>Birthday Fun Party</h3>
+          <p>Decor, games, host, music, and lights for active party energy.</p>
           <ul>
-            <li>Theme decor</li>
-            <li>DJ</li>
+            <li>Full theme decor</li>
             <li>Games + host</li>
+            <li>Sound and party lighting</li>
           </ul>
-          <strong>Rs. 18,000 - Rs. 35,000</strong>
-          <button class="btn-primary" type="button" onclick="bookPackage('Birthday','Medium','Birthday Fun','birthday')">Book this package</button>
+          <strong>Rs. 20,000 - Rs. 40,000</strong>
+          <button class="btn-primary" type="button" onclick="bookPackage('Birthday','Medium','Birthday Fun Party','birthday')">Book this package</button>
         </article>
 
         <article class="event-package-card">
           <span class="package-label">Premium</span>
-          <h3>Birthday Grand</h3>
-          <p>A brighter party setup with premium decor, lights, and anchoring.</p>
+          <h3>Birthday Grand Gala</h3>
+          <p>Full-scale party management with DJ, stage, and special entries.</p>
           <ul>
-            <li>Premium decor</li>
-            <li>DJ + lights</li>
-            <li>Anchoring</li>
+            <li>Grand theme decor</li>
+            <li>DJ + special effects</li>
+            <li>Complete party management</li>
           </ul>
-          <strong>Rs. 40,000 - Rs. 75,000</strong>
-          <button class="btn-primary" type="button" onclick="bookPackage('Birthday','Premium','Birthday Grand','birthday')">Book this package</button>
+          <strong>Rs. 50,000 - Rs. 1,00,000</strong>
+          <button class="btn-primary" type="button" onclick="bookPackage('Birthday','Premium','Birthday Grand Gala','birthday')">Book this package</button>
         </article>
       </div>
 
@@ -203,20 +208,20 @@
         <h3>Birthday Add-ons</h3>
         <div class="addon-section event-addon-section">
           <div class="addon-grid">
-            <label class="addon-card"><input type="checkbox" value="Theme Decoration"><span>Theme Decoration</span></label>
-            <label class="addon-card"><input type="checkbox" value="Balloon Decoration"><span>Balloon Decoration</span></label>
-            <label class="addon-card"><input type="checkbox" value="Catering / Snacks"><span>Catering / Snacks</span></label>
-            <label class="addon-card"><input type="checkbox" value="Magic Show / Game Host"><span>Magic Show / Game Host</span></label>
+            <label class="addon-card"><input type="checkbox" value="Magic Show"><span>Magic Show</span></label>
+            <label class="addon-card"><input type="checkbox" value="Tattoo Artist"><span>Tattoo Artist</span></label>
+            <label class="addon-card"><input type="checkbox" value="DJ and Lights"><span>DJ and Lights</span></label>
+            <label class="addon-card"><input type="checkbox" value="Photography & Videography"><span>Photography & Videography</span></label>
           </div>
         </div>
-        <p>Destination options: Local and Outstation. Final pricing is confirmed before booking.</p>
+        <p>Custom party themes available for children, teens, and milestone birthdays.</p>
       </div>
     </section>
 
     <section class="event-detail-section" id="carnival">
       <div class="event-detail-grid">
         <div class="event-detail-media">
-          <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=1200&q=80" alt="Carnival fair and festival illumination" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=1200&q=80" alt="Carnival fair and festival illumination" loading="lazy">
         </div>
         <div class="event-detail-copy">
           <p class="section-kicker">Stalls &bull; Lights &bull; Stage</p>
@@ -363,25 +368,25 @@
         </article>
 
         <article>
-          <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=800&q=80" alt="Corporate Groove performance" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=800&q=80" alt="Corporate Groove performance" loading="lazy">
           <h3>Corporate Groove</h3>
           <p>Professional live entertainment for office parties, launches, and formal gatherings.</p>
           <div class="band-tags"><span class="tag">Corporate</span><span class="tag">Pop</span><span class="tag">Live</span></div>
           <p><b>Starting:</b> Rs. 50,000<br><b>Duration:</b> 1 hr, 2 hr, Full Event</p>
           <div class="band-actions">
-            <button class="btn-outline" type="button" onclick="openBandDetails({name:'Corporate Groove',price:'Rs. 50,000',genres:['Corporate','Pop','Live'],durations:['1 hr','2 hr','Full Event'],location:'Kolkata, West Bengal, Outstation',rating:'4.8',reviews:'120',img:'https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=800&q=80',video:'https://www.youtube.com/embed/SAKvJzuPcxg',desc:'Polished live entertainment for office celebrations, product launches, annual days, and formal gatherings.'})">View Details</button>
+            <button class="btn-outline" type="button" onclick="openBandDetails({name:'Corporate Groove',price:'Rs. 50,000',genres:['Corporate','Pop','Live'],durations:['1 hr','2 hr','Full Event'],location:'Kolkata, West Bengal, Outstation',rating:'4.8',reviews:'120',img:'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=800&q=80',video:'https://youtu.be/SAKvJzuPcxg',desc:'Polished live entertainment for office celebrations, product launches, annual days, and formal gatherings.'})">View Details</button>
             <button class="btn-primary" type="button" onclick="bookNow('Corporate Groove')">Book</button>
           </div>
         </article>
 
         <article>
-          <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80" alt="Carnival Rhythm Crew performance" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?auto=format&fit=crop&w=800&q=80" alt="Carnival Rhythm Crew performance" loading="lazy">
           <h3>Carnival Rhythm Crew</h3>
           <p>Interactive live rhythm set for carnivals, school events, and outdoor gatherings.</p>
           <div class="band-tags"><span class="tag">Carnival</span><span class="tag">Rhythm</span><span class="tag">Outdoor</span></div>
           <p><b>Starting:</b> Rs. 28,000<br><b>Duration:</b> 1 hr, 2 hr, Full Event</p>
           <div class="band-actions">
-            <button class="btn-outline" type="button" onclick="openBandDetails({name:'Carnival Rhythm Crew',price:'Rs. 28,000',genres:['Carnival','Rhythm','Outdoor'],durations:['1 hr','2 hr','Full Event'],location:'Kolkata, West Bengal, Outstation',rating:'4.8',reviews:'120',img:'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80',video:'https://www.youtube.com/embed/SAKvJzuPcxg',desc:'Interactive rhythm and live music for carnivals, school events, society functions, and outdoor gatherings.'})">View Details</button>
+            <button class="btn-outline" type="button" onclick="openBandDetails({name:'Carnival Rhythm Crew',price:'Rs. 28,000',genres:['Carnival','Rhythm','Outdoor'],durations:['1 hr','2 hr','Full Event'],location:'Kolkata, West Bengal, Outstation',rating:'4.8',reviews:'120',img:'https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?auto=format&fit=crop&w=800&q=80',video:'https://youtu.be/SAKvJzuPcxg',desc:'Interactive rhythm and live music for carnivals, school events, society functions, and outdoor gatherings.'})">View Details</button>
             <button class="btn-primary" type="button" onclick="bookNow('Carnival Rhythm Crew')">Book</button>
           </div>
         </article>
@@ -464,43 +469,110 @@
     <section class="events-cta">
       <h2>Ready to plan your event?</h2>
       <p>Share your event type, date, location, and budget. We will suggest the best package.</p>
-      <a class="login-btn" href="https://wa.me/919903634178?text=Hello%2C%20I%20want%20to%20book%20an%20event%20with%20SPARSH%20Group%20of%20Events.">Book on WhatsApp</a>
+      <a class="login-btn" href="https://wa.me/919903634178?text=Hello%2C%20I%20want%20to%20book%20an%20event%20with%20EVENTIQUE%20Group%20of%20Events.">Book on WhatsApp</a>
     </section>
   </main>
 
+  <!-- SITE FOOTER -->
   <footer class="site-footer">
     <div class="footer-container">
-      <div class="footer-box">
-        <h3>SPARSH Group of Events</h3>
-        <p>Professional event planning, musical bands, and entertainment services for every celebration.</p>
+  
+      <!-- BRAND & MISSION -->
+      <div class="footer-box footer-brand-box">
+        <div class="footer-logo-row">
+          <img src="images/LOGO MAIN 3..png" alt="EVENTIQUE Logo" class="footer-brand-logo" loading="lazy">
+          <div>
+            <h3 class="footer-brand-title">EVENTIQUE</h3>
+            <span class="footer-brand-sub">Group of Events</span>
+          </div>
+        </div>
+        <p class="footer-brand-desc">
+          Premier event planning, signature musical bands, stage decor, and sound &amp; lighting production for every celebration across India.
+        </p>
+        <div class="footer-badge-pill">
+          <span>✨ 500+ Celebrations Managed</span>
+        </div>
       </div>
+  
+      <!-- QUICK LINKS -->
       <div class="footer-box">
-        <h4>Quick Links</h4>
-        <ul>
+        <h4>Navigation</h4>
+        <ul class="footer-links">
           <li><a href="index.html">Home</a></li>
-          <li><a href="events.html">Events</a></li>
-          <li><a href="booking.html">Book Slot</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="#wedding">Wedding Packages</a></li>
-          <li><a href="#bands">Musical Bands</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="events.html">Event Packages</a></li>
+          <li><a href="booking.html">Book Online</a></li>
+          <li><a href="gallery.html">Portfolio &amp; Gallery</a></li>
+          <li><a href="javascript:void(0)" onclick="openLogin()">Account Login</a></li>
         </ul>
       </div>
+
+      <!-- EVENT SPECIALITIES -->
       <div class="footer-box">
-        <h4>Contact Us</h4>
-        <p>Kolkata, India</p>
-        <p>+91 8420605823</p>
-        <p>souravdhara087@gmail.com</p>
+        <h4>Specialities</h4>
+        <ul class="footer-links">
+          <li><a href="events.html#wedding">💍 Royal Weddings</a></li>
+          <li><a href="events.html#birthday">🎂 Theme Birthdays</a></li>
+          <li><a href="events.html#carnival">🎡 Carnivals &amp; Fests</a></li>
+          <li><a href="index.html#bands">🎸 Live Musical Bands</a></li>
+          <li><a href="#booking">🎧 DJ &amp; Laser Shows</a></li>
+        </ul>
       </div>
-      <div class="footer-box">
-        <h4>Follow Us</h4>
-        <div class="social-links">
-          <a href="https://www.facebook.com/sourav.dhara.54738">Facebook</a>
-          <a href="https://www.instagram.com/souravjr_11/">Instagram</a>
-          <a href="#">YouTube</a>
+  
+      <!-- CONTACT & SOCIALS -->
+      <div class="footer-box footer-contact-box">
+        <h4>Contact Us</h4>
+        <div class="footer-contact-list">
+          <p class="footer-contact-item">
+            <span class="footer-contact-icon">📍</span>
+            <span>Kolkata, West Bengal, India</span>
+          </p>
+          <p class="footer-contact-item">
+            <span class="footer-contact-icon">📞</span>
+            <a href="tel:+918420605823">+91 8420605823</a>
+          </p>
+          <p class="footer-contact-item">
+            <span class="footer-contact-icon">✉️</span>
+            <a href="mailto:souravdhara087@gmail.com">souravdhara087@gmail.com</a>
+          </p>
+        </div>
+
+        <div class="footer-social-wrap">
+          <span class="footer-social-label">Connect With Us</span>
+          <div class="footer-social-icons">
+            <a href="https://www.facebook.com/sourav.dhara.54738" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="social-icon-btn facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/souravjr_11/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-icon-btn instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="https://youtu.be/SAKvJzuPcxg" target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="social-icon-btn youtube">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+            <a href="https://wa.me/918420605823" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="social-icon-btn whatsapp">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+  
+    </div>
+  
+    <!-- BOTTOM BAR -->
+    <div class="footer-bottom">
+      <div class="footer-bottom-container">
+        <p class="footer-copy">&copy; 2026 EVENTIQUE Group of Events. All Rights Reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="about.html">About Us</a>
+          <span>•</span>
+          <a href="events.html">Services</a>
+          <span>•</span>
+          <a href="booking.html">Booking</a>
+          <span>•</span>
+          <a href="#top" class="footer-back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'}); return false;">↑ Back to Top</a>
         </div>
       </div>
     </div>
-    <div class="footer-bottom">&copy; 2026 SPARSH Group of Events. All Rights Reserved.</div>
   </footer>
 
   <div class="login-modal" id="loginModal">
