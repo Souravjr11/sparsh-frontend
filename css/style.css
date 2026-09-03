@@ -3659,6 +3659,7 @@ body.nav-open {
   position: relative;
   height: 130px;
   overflow: hidden;
+  background: #000;
 }
 
 .booking-cat-card__media img {
@@ -3671,6 +3672,21 @@ body.nav-open {
 
 .booking-cat-card:hover .booking-cat-card__media img {
   transform: scale(1.08);
+}
+
+.booking-cat-card__badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(10, 12, 16, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 6px;
+  z-index: 2;
 }
 
 .booking-cat-card__body {
