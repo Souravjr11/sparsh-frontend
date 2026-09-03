@@ -67,9 +67,12 @@
     </div>
   </header>
   
-<!-- ===== LOGO SECTION ===== -->
+<!-- ===== 3D CANVAS & LOGO SECTION ===== -->
 <section class="logo-section" data-scroll="reveal-zoom">
-  <div class="logo-wrap fade-in">
+  <canvas id="canvas3DSpace" class="canvas-3d-space" aria-hidden="true"></canvas>
+  <div class="orb-3d-glow orb-1" aria-hidden="true"></div>
+  <div class="orb-3d-glow orb-2" aria-hidden="true"></div>
+  <div class="logo-wrap fade-in card-3d-tilt">
     <img src="images/LOGO MAIN 3..png" alt="EVENTIQUE Events Logo" class="main-logo">
     <div class="logo-text">
       <div class="company-title">EVENTIQUE GROUP OF EVENTS</div>
@@ -96,7 +99,7 @@
       </button>
 
       <div class="works-scroll" id="worksSliderTrack">
-        <div class="work-slide-item stagger-1" data-scroll="reveal-up">
+        <div class="work-slide-item stagger-1 card-3d-tilt" data-scroll="reveal-3d-up">
           <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80" alt="Royal Wedding Floral Stage & Decor" loading="lazy">
           <div class="work-slide-overlay">
             <span class="work-tag">💍 Royal Weddings</span>
@@ -104,7 +107,7 @@
           </div>
         </div>
 
-        <div class="work-slide-item stagger-2" data-scroll="reveal-up">
+        <div class="work-slide-item stagger-2 card-3d-tilt" data-scroll="reveal-3d-up">
           <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=800&q=80" alt="Theme Birthday Party Setup" loading="lazy">
           <div class="work-slide-overlay">
             <span class="work-tag">🎂 Theme Birthdays</span>
@@ -112,7 +115,7 @@
           </div>
         </div>
 
-        <div class="work-slide-item stagger-3" data-scroll="reveal-up">
+        <div class="work-slide-item stagger-3 card-3d-tilt" data-scroll="reveal-3d-up">
           <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=800&q=80" alt="Carnival & Festive Fair" loading="lazy">
           <div class="work-slide-overlay">
             <span class="work-tag">🎡 College & Carnivals</span>
@@ -120,7 +123,7 @@
           </div>
         </div>
 
-        <div class="work-slide-item stagger-4" data-scroll="reveal-up">
+        <div class="work-slide-item stagger-4 card-3d-tilt" data-scroll="reveal-3d-up">
           <img src="https://images.unsplash.com/photo-1465847899084-d164df4dedc6?auto=format&fit=crop&w=800&q=80" alt="Live Rock Band Performance" loading="lazy">
           <div class="work-slide-overlay">
             <span class="work-tag">🎸 Live Concerts</span>
@@ -128,7 +131,7 @@
           </div>
         </div>
 
-        <div class="work-slide-item stagger-5" data-scroll="reveal-up">
+        <div class="work-slide-item stagger-5 card-3d-tilt" data-scroll="reveal-3d-up">
           <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=800&q=80" alt="DJ Night & Laser Show" loading="lazy">
           <div class="work-slide-overlay">
             <span class="work-tag">🎧 DJ & EDM Nights</span>
@@ -136,7 +139,7 @@
           </div>
         </div>
 
-        <div class="work-slide-item stagger-6" data-scroll="reveal-up">
+        <div class="work-slide-item stagger-6 card-3d-tilt" data-scroll="reveal-3d-up">
           <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=800&q=80" alt="Royal Wedding Grand Entry" loading="lazy">
           <div class="work-slide-overlay">
             <span class="work-tag">✨ Special Entries</span>
@@ -195,7 +198,7 @@
 <div class="services-grid">
 
   <!-- ROW 1: CARDS -->
-  <button class="service-card event-card stagger-1" data-scroll="reveal-up" data-panel="weddingPanel"
+  <button class="service-card event-card card-3d-tilt stagger-1" data-scroll="reveal-3d-up" data-panel="weddingPanel"
     style="--bg:url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=800&q=80')" type="button"
     onclick="togglePanel('weddingPanel')">
     <div class="event-card__content">
@@ -204,7 +207,7 @@
     </div>
   </button>
 
-  <button class="service-card event-card stagger-2" data-scroll="reveal-up" data-panel="birthdayPanel"
+  <button class="service-card event-card card-3d-tilt stagger-2" data-scroll="reveal-3d-up" data-panel="birthdayPanel"
     style="--bg:url('https://images.unsplash.com/photo-1527529482837-4698179dc6ce?auto=format&fit=crop&w=800&q=80')" type="button"
     onclick="togglePanel('birthdayPanel')">
     <div class="event-card__content">
@@ -213,8 +216,8 @@
     </div>
   </button>
 
-  <button class="service-card event-card stagger-3" data-scroll="reveal-up" data-panel="carnivalPanel"
-    style="--bg:url('https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=800&q=80')" type="button"
+  <button class="service-card event-card card-3d-tilt stagger-3" data-scroll="reveal-3d-up" data-panel="carnivalPanel"
+    style="--bg:url('https://images.unsplash.com/photo-1561489413-985b06da5bee?auto=format&fit=crop&w=800&q=80')" type="button"
     onclick="togglePanel('carnivalPanel')">
     <div class="event-card__content">
       <div class="event-card__title">Carnival</div>
@@ -222,7 +225,7 @@
     </div>
   </button>
 
-  <button class="service-card event-card band-card-cta stagger-4" data-scroll="reveal-up" data-panel="bands"
+  <button class="service-card event-card band-card-cta card-3d-tilt stagger-4" data-scroll="reveal-3d-up" data-panel="bands"
     style="--bg:url('https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=800&q=80')" type="button"
     onclick="openBands()">
     <div class="event-card__content">

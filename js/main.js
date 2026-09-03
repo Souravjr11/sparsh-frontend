@@ -1101,6 +1101,175 @@ document.addEventListener("DOMContentLoaded", function () {
       revealElements.forEach(el => el.classList.add("is-revealed"));
     }
   })();
+
+  // =========================================================
+  // 3D ANIMATION ENGINE (TILT & COSMIC PARTICLE CANVAS)
+  // =========================================================
+  (function init3DAnimationEngine() {
+    // 1. Interactive 3D Card Tilt with Specular Glare
+    const tiltCards = document.querySelectorAll(
+      ".card-3d-tilt, .event-card, .band-card, .work-slide-item, .trust-card, .testimonial-card, .yt-video-card, .logo-wrap"
+    );
+
+    const isTouchDevice = "ontouchstart" in window || navigator.maxTouchPoints > 0;
+
+    if (!isTouchDevice && tiltCards.length > 0) {
+      tiltCards.forEach(card => {
+        // Ensure glare element exists
+        let glare = card.querySelector(".card-3d-glare");
+        if (!glare) {
+          glare = document.createElement("div");
+          glare.className = "card-3d-glare";
+          card.appendChild(glare);
+        }
+
+        let bounds;
+
+        card.addEventListener("mouseenter", () => {
+          bounds = card.getBoundingClientRect();
+          if (glare) glare.style.opacity = "1";
+        });
+
+        card.addEventListener("mousemove", (e) => {
+          if (!bounds) bounds = card.getBoundingClientRect();
+          const mouseX = e.clientX - bounds.left;
+          const mouseY = e.clientY - bounds.top;
+
+          const centerX = bounds.width / 2;
+          const centerY = bounds.height / 2;
+
+          const deltaX = (mouseX - centerX) / centerX;
+          const deltaY = (mouseY - centerY) / centerY;
+
+          const rotateX = -deltaY * 10; // max 10 deg
+          const rotateY = deltaX * 10;
+
+          card.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translateZ(10px) scale3d(1.025, 1.025, 1.025)`;
+
+          if (glare) {
+            const glarePercentX = (mouseX / bounds.width) * 100;
+            const glarePercentY = (mouseY / bounds.height) * 100;
+            glare.style.background = `radial-gradient(circle at ${glarePercentX}% ${glarePercentY}%, rgba(255, 255, 255, 0.22) 0%, rgba(37, 211, 102, 0.08) 40%, transparent 75%)`;
+          }
+        });
+
+        card.addEventListener("mouseleave", () => {
+          card.style.transform = "perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(0px) scale3d(1, 1, 1)";
+          if (glare) glare.style.opacity = "0";
+        });
+      });
+    }
+
+    // 2. 3D Cosmic Particle Space Canvas
+    const canvas = document.getElementById("canvas3DSpace");
+    if (canvas) {
+      const ctx = canvas.getContext("2d");
+      let width = (canvas.width = canvas.parentElement.offsetWidth || window.innerWidth);
+      let height = (canvas.height = canvas.parentElement.offsetHeight || 300);
+
+      let mouse = { x: width / 2, y: height / 2, targetX: width / 2, targetY: height / 2 };
+
+      const particleCount = Math.min(Math.floor(width / 22), 55);
+      const particles = [];
+      const colors = [
+        "rgba(37, 211, 102, ", // Emerald Green
+        "rgba(255, 180, 70, ",  // Warm Gold
+        "rgba(0, 210, 255, ",   // Electric Cyan
+        "rgba(255, 255, 255, "  // Star White
+      ];
+
+      for (let i = 0; i < particleCount; i++) {
+        particles.push({
+          x: (Math.random() - 0.5) * width * 1.4,
+          y: (Math.random() - 0.5) * height * 1.4,
+          z: Math.random() * 800 + 100, // 3D depth
+          size: Math.random() * 2.2 + 1,
+          color: colors[Math.floor(Math.random() * colors.length)],
+          alpha: Math.random() * 0.6 + 0.3,
+          speedZ: Math.random() * 0.6 + 0.3
+        });
+      }
+
+      function onMouseMove(e) {
+        const rect = canvas.getBoundingClientRect();
+        mouse.targetX = e.clientX - rect.left;
+        mouse.targetY = e.clientY - rect.top;
+      }
+
+      window.addEventListener("mousemove", onMouseMove, { passive: true });
+
+      function resizeCanvas() {
+        if (!canvas.parentElement) return;
+        width = canvas.width = canvas.parentElement.offsetWidth || window.innerWidth;
+        height = canvas.height = canvas.parentElement.offsetHeight || 300;
+      }
+
+      window.addEventListener("resize", resizeCanvas, { passive: true });
+
+      const fov = 400; // Field of view for 3D projection
+
+      function animate3D() {
+        ctx.clearRect(0, 0, width, height);
+
+        // Smooth camera lerp
+        mouse.x += (mouse.targetX - mouse.x) * 0.05;
+        mouse.y += (mouse.targetY - mouse.y) * 0.05;
+
+        const offsetX = (mouse.x - width / 2) * 0.15;
+        const offsetY = (mouse.y - height / 2) * 0.15;
+
+        for (let i = 0; i < particles.length; i++) {
+          const p = particles[i];
+
+          // Move forward through 3D space
+          p.z -= p.speedZ;
+          if (p.z <= 10) {
+            p.z = 800;
+            p.x = (Math.random() - 0.5) * width * 1.4;
+            p.y = (Math.random() - 0.5) * height * 1.4;
+          }
+
+          // 3D to 2D perspective projection
+          const scale = fov / (fov + p.z);
+          const projX = (p.x - offsetX) * scale + width / 2;
+          const projY = (p.y - offsetY) * scale + height / 2;
+          const projSize = p.size * scale;
+
+          if (projX >= 0 && projX <= width && projY >= 0 && projY <= height) {
+            ctx.beginPath();
+            ctx.arc(projX, projY, Math.max(0.5, projSize), 0, Math.PI * 2);
+            ctx.fillStyle = `${p.color}${p.alpha * scale})`;
+            ctx.shadowColor = p.color + "1)";
+            ctx.shadowBlur = 8 * scale;
+            ctx.fill();
+            ctx.shadowBlur = 0; // reset for performance
+
+            // Subtle connecting lines for nearby 3D points
+            for (let j = i + 1; j < particles.length; j++) {
+              const p2 = particles[j];
+              const scale2 = fov / (fov + p2.z);
+              const p2X = (p2.x - offsetX) * scale2 + width / 2;
+              const p2Y = (p2.y - offsetY) * scale2 + height / 2;
+
+              const dist = Math.hypot(projX - p2X, projY - p2Y);
+              if (dist < 85) {
+                ctx.beginPath();
+                ctx.moveTo(projX, projY);
+                ctx.lineTo(p2X, p2Y);
+                ctx.strokeStyle = `rgba(37, 211, 102, ${(1 - dist / 85) * 0.15 * scale})`;
+                ctx.lineWidth = 0.8;
+                ctx.stroke();
+              }
+            }
+          }
+        }
+
+        requestAnimationFrame(animate3D);
+      }
+
+      animate3D();
+    }
+  })();
 });
 
 // Category selector helper for booking page

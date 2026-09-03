@@ -6052,3 +6052,137 @@ body.nav-open {
   }
 }
 
+/* =========================================================
+   3D ANIMATION ENGINE & LUXURY DEPTH EFFECTS (HOME PAGE)
+========================================================= */
+
+/* 1. 3D Canvas Space Background */
+.logo-section {
+  position: relative;
+  overflow: hidden;
+  perspective: 1200px;
+}
+
+.canvas-3d-space {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.75;
+}
+
+/* 2. Floating 3D Luminous Orbs */
+.orb-3d-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(55px);
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.35;
+  mix-blend-mode: screen;
+  will-change: transform;
+}
+
+.orb-1 {
+  width: 220px;
+  height: 220px;
+  top: -40px;
+  left: 15%;
+  background: radial-gradient(circle, rgba(37, 211, 102, 0.8) 0%, rgba(0, 210, 255, 0.3) 70%, transparent 100%);
+  animation: float3DOrb1 10s ease-in-out infinite alternate;
+}
+
+.orb-2 {
+  width: 260px;
+  height: 260px;
+  bottom: -50px;
+  right: 15%;
+  background: radial-gradient(circle, rgba(255, 179, 71, 0.75) 0%, rgba(255, 106, 0, 0.3) 70%, transparent 100%);
+  animation: float3DOrb2 12s ease-in-out infinite alternate;
+}
+
+@keyframes float3DOrb1 {
+  0% { transform: translate3d(0, 0, 0) scale(1) rotate(0deg); }
+  50% { transform: translate3d(45px, 30px, 50px) scale(1.18) rotate(180deg); }
+  100% { transform: translate3d(-30px, 45px, -30px) scale(0.92) rotate(360deg); }
+}
+
+@keyframes float3DOrb2 {
+  0% { transform: translate3d(0, 0, 0) scale(1) rotate(0deg); }
+  50% { transform: translate3d(-50px, -35px, 60px) scale(1.22) rotate(-180deg); }
+  100% { transform: translate3d(35px, -25px, -40px) scale(0.95) rotate(-360deg); }
+}
+
+/* 3. 3D Interactive Card Tilt & Specular Glare */
+.card-3d-tilt,
+.event-card,
+.band-card,
+.work-slide-item,
+.trust-card,
+.testimonial-card,
+.yt-video-card {
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition: transform 0.18s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.25s ease;
+  position: relative;
+}
+
+.card-3d-glare {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 10;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  mix-blend-mode: overlay;
+}
+
+/* 4. 3D Scroll Reveal States */
+[data-scroll="reveal-3d-up"] {
+  opacity: 0;
+  transform: perspective(1000px) rotateX(18deg) translate3d(0, 45px, -60px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+[data-scroll="reveal-3d-up"].is-revealed {
+  opacity: 1;
+  transform: perspective(1000px) rotateX(0deg) translate3d(0, 0, 0);
+}
+
+[data-scroll="reveal-3d-flip"] {
+  opacity: 0;
+  transform: perspective(1200px) rotateY(-24deg) translate3d(-35px, 0, -50px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+[data-scroll="reveal-3d-flip"].is-revealed {
+  opacity: 1;
+  transform: perspective(1200px) rotateY(0deg) translate3d(0, 0, 0);
+}
+
+/* 5. 3D Logo Elevation & Floating Badge */
+.logo-wrap.card-3d-tilt {
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.5) inset;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.logo-wrap.card-3d-tilt:hover {
+  box-shadow: 0 28px 65px rgba(37, 211, 102, 0.18), 0 0 25px rgba(37, 211, 102, 0.2);
+}
+
+/* 6. 3D Tactile Button Press */
+.btn-primary:active,
+.btn-outline:active,
+.works-nav-btn:active {
+  transform: translateY(2px) scale(0.97) !important;
+  box-shadow: 0 2px 8px rgba(37, 211, 102, 0.25) !important;
+}
+
