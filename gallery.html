@@ -360,10 +360,8 @@
           </article>
 
           <!-- Item 14: Video Clip Feature -->
-          <article class="gallery-card video-card" data-category="video" data-video="https://www.youtube.com/embed/SAKvJzuPcxg?autoplay=1&rel=0" data-poster="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=1200&q=80" data-title="Live Events in Action (Video Highlight)" data-desc="Watch our live event production, stage lighting, and musical performances in motion.">
           <article class="gallery-card video-card" data-category="video" data-video="https://www.youtube.com/embed/SAKvJzuPcxg?autoplay=1&rel=0" data-ytlink="https://youtu.be/SAKvJzuPcxg" data-poster="https://i.ytimg.com/vi/SAKvJzuPcxg/maxresdefault.jpg" data-title="Live Events in Action (Featured Performance)" data-desc="Watch our live event production, stage lighting, and musical performances in motion.">
             <div class="gallery-card__media">
-              <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=800&q=80" alt="Video highlight of live events" loading="lazy">
               <img src="https://i.ytimg.com/vi/SAKvJzuPcxg/maxresdefault.jpg" alt="Video highlight of live events" loading="lazy">
               <span class="gallery-badge video-badge">&#9658; Video Highlight</span>
               <div class="gallery-overlay video-overlay">
@@ -371,7 +369,6 @@
               </div>
             </div>
             <div class="gallery-card__info">
-              <h3>Live Events in Action (Video Reel)</h3>
               <h3>Live Events in Action (Featured Performance)</h3>
               <p>Experience the music, lighting, and energetic crowd moments.</p>
               <div class="gallery-card__tags">
@@ -386,57 +383,102 @@
       </div>
     </section>
 
-    <!-- FEATURED VIDEO SECTION -->
+    <!-- FEATURED VIDEO SECTION (CINEMATIC PRODUCTION SHOWCASE) -->
     <section class="gallery-video-section">
       <div class="gallery-video-container">
+        
         <div class="video-header">
-          <p class="section-kicker">Watch The Energy</p>
+          <span class="video-section-badge">✨ Concert &amp; Stage Production</span>
           <h2>Experience Our Live Events In Action</h2>
-          <p>Get a direct feel of the rhythm, crowd cheers, and lighting spectacle that EVENTIQUE delivers at every show.</p>
+          <p>Immerse yourself in the rhythm, crowd energy, and concert-grade lighting spectacle delivered at our live celebrations.</p>
         </div>
 
-        <div class="gallery-featured-video">
-          <iframe 
-            src="https://www.youtube.com/embed/SAKvJzuPcxg?rel=0" 
-            title="EVENTIQUE Live Event Performance" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-            allowfullscreen>
-          </iframe>
-        <div class="gallery-featured-video" style="background:transparent; border:none; box-shadow:none;">
-          <div class="yt-video-card" style="width:100%; max-width:100%; margin:0 auto;">
-            <a href="https://youtu.be/SAKvJzuPcxg" target="_blank" rel="noopener noreferrer" class="yt-video-card__cover" aria-label="Watch Live Performance on YouTube">
-              <img src="https://i.ytimg.com/vi/SAKvJzuPcxg/maxresdefault.jpg" alt="Live Event Performance Video" class="yt-video-card__thumb">
-              <div class="yt-video-card__overlay">
-                <div class="yt-play-btn">
-                  <svg viewBox="0 0 68 48" class="yt-play-svg">
+        <div class="video-showcase-grid">
+          
+          <!-- LEFT: CINEMA VIDEO STAGE -->
+          <div class="video-main-stage">
+            <a href="https://youtu.be/SAKvJzuPcxg" target="_blank" rel="noopener noreferrer" class="video-player-frame video-player-link" aria-label="Watch Live Performance on YouTube">
+              <img src="https://i.ytimg.com/vi/SAKvJzuPcxg/maxresdefault.jpg" alt="EVENTIQUE Live Event Performance" class="video-frame-thumb" loading="lazy">
+              
+              <div class="video-live-tag">
+                <span class="live-dot"></span>
+                <span>4K HD Live Reel</span>
+              </div>
+
+              <div class="video-frame-overlay">
+                <div class="video-play-circle">
+                  <svg viewBox="0 0 68 48" width="60" height="42" class="video-play-svg">
                     <path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#ff0000"></path>
                     <path d="M 45,24 27,14 27,34" fill="#ffffff"></path>
                   </svg>
                 </div>
-                <div class="yt-video-card__badge">
-                  <span>▶ Watch Full Performance on YouTube</span>
-                </div>
+                <span class="video-click-prompt">▶ Watch Live Concert on YouTube</span>
               </div>
             </a>
-            <div class="yt-video-card__bar">
-              <div class="yt-video-card__meta">
-                <span class="yt-pill">🔴 Featured Performance</span>
-                <h3>Closing Ceremony Live Performance</h3>
+
+            <div class="video-player-meta">
+              <div class="video-title-info">
+                <h3>Closing Ceremony &amp; Live Band Performance</h3>
+                <p>High-energy rock fusion performance with synchronized dynamic lighting and pyro effects.</p>
               </div>
-              <a href="https://youtu.be/SAKvJzuPcxg" target="_blank" rel="noopener noreferrer" class="btn-primary yt-open-btn">
+              <a href="https://youtu.be/SAKvJzuPcxg" target="_blank" rel="noopener noreferrer" class="btn-yt-direct">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
                 Watch on YouTube ↗
               </a>
             </div>
           </div>
+
+          <!-- RIGHT: PRODUCTION HIGHLIGHTS SIDEBAR -->
+          <div class="video-features-sidebar">
+            <div class="features-card-header">
+              <h4>🎪 Turn-Key Production Specs</h4>
+              <p>Everything included in this featured setup:</p>
+            </div>
+
+            <div class="production-features-list">
+              <div class="spec-item">
+                <div class="spec-icon">🔊</div>
+                <div class="spec-text">
+                  <h5>20,000W Line-Array Acoustics</h5>
+                  <span>Ultra-clean JBL/RCF concert sound system with delay towers.</span>
+                </div>
+              </div>
+
+              <div class="spec-item">
+                <div class="spec-icon">💡</div>
+                <div class="spec-text">
+                  <h5>Intelligent Moving Lights</h5>
+                  <span>360° Beam Sharpy fixtures, LED washes &amp; laser choreography.</span>
+                </div>
+              </div>
+
+              <div class="spec-item">
+                <div class="spec-icon">🎸</div>
+                <div class="spec-text">
+                  <h5>Headline Artist Lineup</h5>
+                  <span>Live Rock Fusion, Bollywood vocalists, and percussionists.</span>
+                </div>
+              </div>
+
+              <div class="spec-item">
+                <div class="spec-icon">✨</div>
+                <div class="spec-text">
+                  <h5>Special FX &amp; Pyro Rigging</h5>
+                  <span>Cold sparkler fountains, heavy smoke clouds, and CO2 jets.</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="sidebar-cta-box">
+              <a href="booking.html" class="btn-primary" style="width:100%; text-align:center; justify-content:center;">
+                Book This Production Setup ↗
+              </a>
+              <span class="cta-subtext">⚡ Fast confirmation via WhatsApp &amp; phone</span>
+            </div>
+          </div>
+
         </div>
 
-        <div class="video-cta-bar">
-          <div>
-            <h3>Want a customized production setup like this?</h3>
-            <p>From lighting trusses to sound engineering and artist line-ups, we have you covered.</p>
-          </div>
-          <a href="booking.html" class="btn-primary">Book This Setup</a>
-        </div>
       </div>
     </section>
 
@@ -473,7 +515,6 @@
           <h3 id="lightboxTitle"></h3>
           <p id="lightboxDesc"></p>
         </div>
-        <div class="lightbox-counter" id="lightboxCounter">1 / 14</div>
         <div style="display:flex; align-items:center; gap:12px;">
           <a id="lightboxYtBtn" href="https://youtu.be/SAKvJzuPcxg" target="_blank" rel="noopener noreferrer" class="btn-primary" style="display:none; padding:6px 14px; font-size:13px; text-decoration:none; border-radius:999px;">Watch on YouTube ↗</a>
           <div class="lightbox-counter" id="lightboxCounter">1 / 14</div>

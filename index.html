@@ -7,6 +7,9 @@
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <!-- TOP SCROLL PROGRESS BAR -->
+    <div id="scrollProgressBar" class="scroll-progress-bar"></div>
+
     <div id="overlay"></div>
 <!-- LOADER -->
 <div id="pageLoader" class="page-loader">
@@ -65,7 +68,7 @@
   </header>
   
 <!-- ===== LOGO SECTION ===== -->
-<section class="logo-section">
+<section class="logo-section" data-scroll="reveal-zoom">
   <div class="logo-wrap fade-in">
     <img src="images/LOGO MAIN 3..png" alt="EVENTIQUE Events Logo" class="main-logo">
     <div class="logo-text">
@@ -76,24 +79,24 @@
 </section>
 
   <section id="about" class="about-section">
-    <h2>About Our Event Company</h2>
+    <h2 class="section-title-animate" data-scroll="reveal-up">About Our Event Company</h2>
   
-    <p class="about-desc">
+    <p class="about-desc" data-scroll="reveal-up">
       We are a professional event management company specializing in weddings,
       corporate events, concerts, and live music shows. Our previous works reflect
       our creativity, passion, and commitment to excellence.
     </p>
   
-    <h3 class="works-title">Our Previous Works</h3>
-    <p class="works-subtitle">Swipe or tap arrows to explore our featured celebrations</p>
+    <h3 class="works-title" data-scroll="reveal-up">Our Previous Works</h3>
+    <p class="works-subtitle" data-scroll="reveal-up">Swipe or tap arrows to explore our featured celebrations</p>
   
-    <div class="works-slider-wrapper">
+    <div class="works-slider-wrapper" data-scroll="reveal-up">
       <button class="works-nav-btn prev-btn" id="worksPrevBtn" aria-label="Previous work" onclick="scrollWorksSlider(-1)">
         &#10094;
       </button>
 
       <div class="works-scroll" id="worksSliderTrack">
-        <div class="work-slide-item">
+        <div class="work-slide-item stagger-1" data-scroll="reveal-up">
           <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80" alt="Royal Wedding Floral Stage & Decor" loading="lazy">
           <div class="work-slide-overlay">
             <span class="work-tag">💍 Royal Weddings</span>
@@ -101,7 +104,7 @@
           </div>
         </div>
 
-        <div class="work-slide-item">
+        <div class="work-slide-item stagger-2" data-scroll="reveal-up">
           <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=800&q=80" alt="Theme Birthday Party Setup" loading="lazy">
           <div class="work-slide-overlay">
             <span class="work-tag">🎂 Theme Birthdays</span>
@@ -109,7 +112,7 @@
           </div>
         </div>
 
-        <div class="work-slide-item">
+        <div class="work-slide-item stagger-3" data-scroll="reveal-up">
           <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=800&q=80" alt="Carnival & Festive Fair" loading="lazy">
           <div class="work-slide-overlay">
             <span class="work-tag">🎡 College & Carnivals</span>
@@ -117,7 +120,7 @@
           </div>
         </div>
 
-        <div class="work-slide-item">
+        <div class="work-slide-item stagger-4" data-scroll="reveal-up">
           <img src="https://images.unsplash.com/photo-1465847899084-d164df4dedc6?auto=format&fit=crop&w=800&q=80" alt="Live Rock Band Performance" loading="lazy">
           <div class="work-slide-overlay">
             <span class="work-tag">🎸 Live Concerts</span>
@@ -125,7 +128,7 @@
           </div>
         </div>
 
-        <div class="work-slide-item">
+        <div class="work-slide-item stagger-5" data-scroll="reveal-up">
           <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=800&q=80" alt="DJ Night & Laser Show" loading="lazy">
           <div class="work-slide-overlay">
             <span class="work-tag">🎧 DJ & EDM Nights</span>
@@ -133,7 +136,7 @@
           </div>
         </div>
 
-        <div class="work-slide-item">
+        <div class="work-slide-item stagger-6" data-scroll="reveal-up">
           <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=800&q=80" alt="Royal Wedding Grand Entry" loading="lazy">
           <div class="work-slide-overlay">
             <span class="work-tag">✨ Special Entries</span>
@@ -153,10 +156,10 @@
 
   <!-- VIDEO SECTION -->
 <section class="video-section">
-    <h2>Our Events in Action</h2>
-    <p>Experience the energy, music, and unforgettable moments we create</p>
+    <h2 class="section-title-animate" data-scroll="reveal-up">Our Events in Action</h2>
+    <p data-scroll="reveal-up">Experience the energy, music, and unforgettable moments we create</p>
   
-    <div class="video-wrapper">
+    <div class="video-wrapper" data-scroll="reveal-zoom">
       <div class="yt-video-card">
         <a href="https://youtu.be/SAKvJzuPcxg" target="_blank" rel="noopener noreferrer" class="yt-video-card__cover" aria-label="Watch Live Performance on YouTube">
           <img src="https://i.ytimg.com/vi/SAKvJzuPcxg/maxresdefault.jpg" alt="EVENTIQUE Live Event Performance" class="yt-video-card__thumb">
@@ -187,12 +190,12 @@
   <!-- ================= SERVICES SECTION ================= -->
 <section id="services" class="services-section">
 
-  <h2>Choose Your Event</h2>
-  <p class="services-desc">Tap an option to see packages by budget</p>
+  <h2 class="section-title-animate" data-scroll="reveal-up">Choose Your Event</h2>
+  <p class="services-desc" data-scroll="reveal-up">Tap an option to see packages by budget</p>
 <div class="services-grid">
 
   <!-- ROW 1: CARDS -->
-  <button class="service-card event-card" data-panel="weddingPanel"
+  <button class="service-card event-card stagger-1" data-scroll="reveal-up" data-panel="weddingPanel"
     style="--bg:url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=800&q=80')" type="button"
     onclick="togglePanel('weddingPanel')">
     <div class="event-card__content">
@@ -201,7 +204,7 @@
     </div>
   </button>
 
-  <button class="service-card event-card" data-panel="birthdayPanel"
+  <button class="service-card event-card stagger-2" data-scroll="reveal-up" data-panel="birthdayPanel"
     style="--bg:url('https://images.unsplash.com/photo-1527529482837-4698179dc6ce?auto=format&fit=crop&w=800&q=80')" type="button"
     onclick="togglePanel('birthdayPanel')">
     <div class="event-card__content">
@@ -210,7 +213,7 @@
     </div>
   </button>
 
-  <button class="service-card event-card" data-panel="carnivalPanel"
+  <button class="service-card event-card stagger-3" data-scroll="reveal-up" data-panel="carnivalPanel"
     style="--bg:url('https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=800&q=80')" type="button"
     onclick="togglePanel('carnivalPanel')">
     <div class="event-card__content">
@@ -219,7 +222,7 @@
     </div>
   </button>
 
-  <button class="service-card event-card band-card-cta" data-panel="bands"
+  <button class="service-card event-card band-card-cta stagger-4" data-scroll="reveal-up" data-panel="bands"
     style="--bg:url('https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=800&q=80')" type="button"
     onclick="openBands()">
     <div class="event-card__content">
@@ -494,12 +497,12 @@
     <!-- MUSICAL BANDS -->
   
 <section id="bands" class="bands-section bands-hidden">
-    <h2>Our Musical Bands</h2>
-    <p class="bands-desc">Choose from our professional bands for every type of event</p>
+    <h2 class="section-title-animate" data-scroll="reveal-up">Our Musical Bands</h2>
+    <p class="bands-desc" data-scroll="reveal-up">Choose from our professional bands for every type of event</p>
   
     <div class="bands-grid">
       <!-- 1. Rock Fusion Band -->
-      <div class="band-card">
+      <div class="band-card stagger-1" data-scroll="reveal-up">
         <div class="band-media">
           <img src="https://images.unsplash.com/photo-1465847899084-d164df4dedc6?auto=format&fit=crop&w=800&q=80" alt="Rock Fusion Band" loading="lazy">
         </div>
@@ -551,7 +554,7 @@
       </div>
 
       <!-- 2. DJ Night Beats -->
-      <div class="band-card">
+      <div class="band-card stagger-2" data-scroll="reveal-up">
         <div class="band-media">
           <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=800&q=80" alt="DJ Night Beats" loading="lazy">
         </div>
@@ -603,7 +606,7 @@
       </div>
 
       <!-- 3. Wedding Melodies -->
-      <div class="band-card">
+      <div class="band-card stagger-3" data-scroll="reveal-up">
         <div class="band-media">
           <img src="https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?auto=format&fit=crop&w=800&q=80" alt="Wedding Melodies" loading="lazy">
         </div>
@@ -655,7 +658,7 @@
       </div>
 
       <!-- 4. Bollywood Live -->
-      <div class="band-card">
+      <div class="band-card stagger-4" data-scroll="reveal-up">
         <div class="band-media">
           <img src="https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?auto=format&fit=crop&w=800&q=80" alt="Bollywood Live" loading="lazy">
         </div>
@@ -707,7 +710,7 @@
       </div>
 
       <!-- 5. Classical Strings -->
-      <div class="band-card">
+      <div class="band-card stagger-5" data-scroll="reveal-up">
         <div class="band-media">
           <img src="https://images.unsplash.com/photo-1612225330812-01a9c6b355ec?auto=format&fit=crop&w=800&q=80" alt="Classical Strings" loading="lazy">
         </div>
@@ -759,7 +762,7 @@
       </div>
 
       <!-- 6. Acoustic Evenings -->
-      <div class="band-card">
+      <div class="band-card stagger-6" data-scroll="reveal-up">
         <div class="band-media">
           <img src="https://images.unsplash.com/photo-1525201548942-d8732f6617a0?auto=format&fit=crop&w=800&q=80" alt="Acoustic Evenings" loading="lazy">
         </div>
@@ -811,7 +814,7 @@
       </div>
 
       <!-- 7. Fusion Folk Collective -->
-      <div class="band-card">
+      <div class="band-card stagger-7" data-scroll="reveal-up">
         <div class="band-media">
           <img src="https://images.unsplash.com/photo-1511192336575-5a79af67a629?auto=format&fit=crop&w=800&q=80" alt="Fusion Folk Collective" loading="lazy">
         </div>
@@ -863,7 +866,7 @@
       </div>
 
       <!-- 8. Corporate Groove -->
-      <div class="band-card">
+      <div class="band-card stagger-8" data-scroll="reveal-up">
         <div class="band-media">
           <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=800&q=80" alt="Corporate Groove" loading="lazy">
         </div>
@@ -915,7 +918,7 @@
       </div>
 
       <!-- 9. Carnival Rhythm Crew -->
-      <div class="band-card">
+      <div class="band-card stagger-9" data-scroll="reveal-up">
         <div class="band-media">
           <img src="https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?auto=format&fit=crop&w=800&q=80" alt="Carnival Rhythm Crew" loading="lazy">
         </div>
@@ -967,7 +970,7 @@
       </div>
 
       <!-- 10. Premium Live Ensemble -->
-      <div class="band-card">
+      <div class="band-card stagger-10" data-scroll="reveal-up">
         <div class="band-media">
           <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=800&q=80" alt="Premium Live Ensemble" loading="lazy">
         </div>
@@ -1023,14 +1026,14 @@
   <section class="booking-section" id="booking">
     <div class="booking-container">
   
-      <h2>Book Your Event Now</h2>
-      <p>
+      <h2 class="section-title-animate" data-scroll="reveal-up">Book Your Event Now</h2>
+      <p data-scroll="reveal-up">
         Planning a wedding, concert, party or corporate event?
         Get in touch with us instantly and reserve your preferred band.
       </p>
   
-      <div class="booking-box">
-        <div class="booking-info">
+      <div class="booking-box" data-scroll="reveal-zoom">
+        <div class="booking-info" data-scroll="reveal-left">
           <h3>Why Book With Us?</h3>
           <ul>
             <li>✔ Professional & verified bands</li>
@@ -1040,7 +1043,7 @@
           </ul>
         </div>
   
-        <div class="booking-action">
+        <div class="booking-action" data-scroll="reveal-right">
           <h3>Quick Booking</h3>
           <p>Click below to connect with us on WhatsApp</p>
   
@@ -1083,29 +1086,29 @@
  <!-- TRUST / PROFESSIONAL SECTION -->
 <section id="why-us" class="trust-section">
   <div class="trust-container">
-    <h2>Why Choose Us</h2>
-    <p class="trust-sub">Trusted event management with verified bands and smooth execution.</p>
+    <h2 class="section-title-animate" data-scroll="reveal-up">Why Choose Us</h2>
+    <p class="trust-sub" data-scroll="reveal-up">Trusted event management with verified bands and smooth execution.</p>
 
     <div class="trust-grid">
-      <div class="trust-card">
+      <div class="trust-card stagger-1" data-scroll="reveal-up">
         <div class="trust-icon">✅</div>
         <h3>Verified Artists</h3>
         <p>Professional bands with real performance experience.</p>
       </div>
 
-      <div class="trust-card">
+      <div class="trust-card stagger-2" data-scroll="reveal-up">
         <div class="trust-icon">⏱️</div>
         <h3>On-time Setup</h3>
         <p>We arrive and set up before time to avoid last-minute stress.</p>
       </div>
 
-      <div class="trust-card">
+      <div class="trust-card stagger-3" data-scroll="reveal-up">
         <div class="trust-icon">💰</div>
         <h3>Transparent Pricing</h3>
         <p>No hidden costs. Clear packages based on your event needs.</p>
       </div>
 
-      <div class="trust-card">
+      <div class="trust-card stagger-4" data-scroll="reveal-up">
         <div class="trust-icon">🎧</div>
         <h3>Dedicated Support</h3>
         <p>Support on call and WhatsApp before and during the event.</p>
@@ -1117,19 +1120,19 @@
 <!-- PAST EVENTS GALLERY -->
 <section id="gallery" class="gallery-section">
   <div class="gallery-container">
-    <h2>Past Events Gallery</h2>
-    <p class="gallery-sub">Some moments from our previous shows and events.</p>
+    <h2 class="section-title-animate" data-scroll="reveal-up">Past Events Gallery</h2>
+    <p class="gallery-sub" data-scroll="reveal-up">Some moments from our previous shows and events.</p>
 
     <div class="gallery-grid">
-      <a href="gallery.html"><img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=600&q=80" alt="Outdoor Fairy Lights Wedding Canopy" loading="lazy"></a>
-      <a href="gallery.html"><img src="https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=600&q=80" alt="Theme Birthday Setup" loading="lazy"></a>
-      <a href="gallery.html"><img src="https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=600&q=80" alt="Grand Carnival & Fair" loading="lazy"></a>
-      <a href="gallery.html"><img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=600&q=80" alt="Arena Live Concert" loading="lazy"></a>
-      <a href="gallery.html"><img src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?auto=format&fit=crop&w=600&q=80" alt="Concert Stage & Laser Show" loading="lazy"></a>
-      <a href="gallery.html"><img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=600&q=80" alt="Royal Wedding Grand Entry" loading="lazy"></a>
+      <a href="gallery.html" class="stagger-1" data-scroll="reveal-zoom"><img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=600&q=80" alt="Outdoor Fairy Lights Wedding Canopy" loading="lazy"></a>
+      <a href="gallery.html" class="stagger-2" data-scroll="reveal-zoom"><img src="https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=600&q=80" alt="Theme Birthday Setup" loading="lazy"></a>
+      <a href="gallery.html" class="stagger-3" data-scroll="reveal-zoom"><img src="https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=600&q=80" alt="Grand Carnival & Fair" loading="lazy"></a>
+      <a href="gallery.html" class="stagger-4" data-scroll="reveal-zoom"><img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=600&q=80" alt="Arena Live Concert" loading="lazy"></a>
+      <a href="gallery.html" class="stagger-5" data-scroll="reveal-zoom"><img src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?auto=format&fit=crop&w=600&q=80" alt="Concert Stage & Laser Show" loading="lazy"></a>
+      <a href="gallery.html" class="stagger-6" data-scroll="reveal-zoom"><img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=600&q=80" alt="Royal Wedding Grand Entry" loading="lazy"></a>
     </div>
 
-    <div style="text-align: center; margin-top: 30px;">
+    <div style="text-align: center; margin-top: 30px;" data-scroll="reveal-up">
       <a href="gallery.html" class="btn-primary" style="display:inline-flex; align-items:center; gap:8px; padding:12px 28px; text-decoration:none; border-radius:999px;">
         View Full Portfolio &amp; Videos &rarr;
       </a>
@@ -1140,21 +1143,21 @@
 <!-- TESTIMONIALS -->
 <section id="testimonials" class="testimonials-section">
   <div class="testimonials-container">
-    <h2>Testimonials</h2>
-    <p class="testimonials-sub">What clients say about our events and bands.</p>
+    <h2 class="section-title-animate" data-scroll="reveal-up">Testimonials</h2>
+    <p class="testimonials-sub" data-scroll="reveal-up">What clients say about our events and bands.</p>
 
     <div class="testimonials-grid">
-      <div class="testimonial-card">
+      <div class="testimonial-card stagger-1" data-scroll="reveal-up">
         <p class="quote">“Amazing band performance and very professional management. Everyone enjoyed!”</p>
         <div class="person">— Wedding Client, Kolkata</div>
       </div>
 
-      <div class="testimonial-card">
+      <div class="testimonial-card stagger-2" data-scroll="reveal-up">
         <p class="quote">“On-time setup and clear communication. Perfect for our corporate event.”</p>
         <div class="person">— Corporate Event</div>
       </div>
 
-      <div class="testimonial-card">
+      <div class="testimonial-card stagger-3" data-scroll="reveal-up">
         <p class="quote">“Great energy, crowd loved it. Booking process was smooth on WhatsApp.”</p>
         <div class="person">— College Fest</div>
       </div>
@@ -1165,26 +1168,26 @@
 <!-- FAQ -->
 <section id="faq" class="faq-section">
   <div class="faq-container">
-    <h2>FAQ</h2>
-    <p class="faq-sub">Common questions about booking and events.</p>
+    <h2 class="section-title-animate" data-scroll="reveal-up">FAQ</h2>
+    <p class="faq-sub" data-scroll="reveal-up">Common questions about booking and events.</p>
 
     <div class="faq-list">
-      <details>
+      <details class="stagger-1" data-scroll="reveal-up">
         <summary>How do payments work?</summary>
         <p>Usually we take an advance to confirm the booking, and the remaining amount on event day.</p>
       </details>
 
-      <details>
+      <details class="stagger-2" data-scroll="reveal-up">
         <summary>What is the cancellation policy?</summary>
         <p>Cancellations depend on the date and preparation. Contact us early for the best possible resolution.</p>
       </details>
 
-      <details>
+      <details class="stagger-3" data-scroll="reveal-up">
         <summary>How long do bands perform?</summary>
         <p>Performance duration can be 1 hour, 2 hours, or full-event based on your package.</p>
       </details>
 
-      <details>
+      <details class="stagger-4" data-scroll="reveal-up">
         <summary>Do you provide travel / outstation bookings?</summary>
         <p>Yes. Travel and stay (if required) are discussed before confirmation.</p>
       </details>
@@ -1193,7 +1196,7 @@
 </section>
  
 
-  <footer class="site-footer">
+  <footer class="site-footer" data-scroll="reveal-up">
     <div class="footer-container">
   
       <!-- BRAND & MISSION -->
@@ -1293,6 +1296,20 @@
       </div>
     </div>
   </footer>
+
+  <!-- FLOATING SCROLL ACTIONS WIDGET -->
+  <div class="floating-scroll-actions" id="floatingScrollActions">
+    <a href="#booking" class="float-btn float-book" title="Book Event Online">
+      <span>✨ Book Event</span>
+    </a>
+    <button type="button" class="float-btn float-top" id="backToTopBtn" aria-label="Back to Top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+      <svg class="progress-ring" width="40" height="40">
+        <circle class="progress-ring__circle-bg" stroke="rgba(255,255,255,0.15)" stroke-width="3" fill="transparent" r="16" cx="20" cy="20"/>
+        <circle class="progress-ring__circle" id="scrollProgressCircle" stroke="#25D366" stroke-width="3" stroke-dasharray="100.53" stroke-dashoffset="100.53" stroke-linecap="round" fill="transparent" r="16" cx="20" cy="20"/>
+      </svg>
+      <span class="float-top-arrow">↑</span>
+    </button>
+  </div>
 
   <div class="login-modal" id="loginModal">
     <div class="login-box">

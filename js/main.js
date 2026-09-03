@@ -1016,4 +1016,89 @@ document.addEventListener("DOMContentLoaded", function () {
       window.navigateLightbox(1);
     }
   });
+
+  /* =========================================================
+     SCROLL REVEAL & DYNAMIC DISPLAY ANIMATION ENGINE
+  ========================================================= */
+  (function initScrollAnimationEngine() {
+    const progressBar = document.getElementById("scrollProgressBar");
+    const floatingActions = document.getElementById("floatingScrollActions");
+    const progressCircle = document.getElementById("scrollProgressCircle");
+    const navbar = document.querySelector(".navbar");
+    const radius = 16;
+    const circumference = 2 * Math.PI * radius; // ~100.53
+
+    if (progressCircle) {
+      progressCircle.style.strokeDasharray = `${circumference} ${circumference}`;
+      progressCircle.style.strokeDashoffset = `${circumference}`;
+    }
+
+    let ticking = false;
+
+    function onScroll() {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+          const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+          const progress = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+
+          // 1. Top linear progress bar
+          if (progressBar) {
+            progressBar.style.width = `${progress}%`;
+          }
+
+          // 2. Circular scroll indicator & floating actions
+          if (floatingActions) {
+            if (scrollTop > 260) {
+              floatingActions.classList.add("visible");
+            } else {
+              floatingActions.classList.remove("visible");
+            }
+          }
+
+          if (progressCircle) {
+            const offset = circumference - (progress / 100) * circumference;
+            progressCircle.style.strokeDashoffset = offset;
+          }
+
+          // 3. Navbar frosted elevation on scroll
+          if (navbar) {
+            if (scrollTop > 40) {
+              navbar.classList.add("scrolled");
+            } else {
+              navbar.classList.remove("scrolled");
+            }
+          }
+
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+
+    // 4. IntersectionObserver for Reveal Elements
+    const revealElements = document.querySelectorAll("[data-scroll]");
+
+    if ("IntersectionObserver" in window) {
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-revealed");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        root: null,
+        threshold: 0.1,
+        rootMargin: "0px 0px -40px 0px"
+      });
+
+      revealElements.forEach(el => revealObserver.observe(el));
+    } else {
+      revealElements.forEach(el => el.classList.add("is-revealed"));
+    }
+  })();
 });
