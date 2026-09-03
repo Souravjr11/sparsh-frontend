@@ -1102,3 +1102,16 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   })();
 });
+
+// Category selector helper for booking page
+window.selectBookingCategory = function(btnEl, categoryVal) {
+  const selectEl = document.getElementById("bookBand");
+  if (selectEl) {
+    selectEl.value = categoryVal;
+    selectEl.dispatchEvent(new Event("change", { bubbles: true }));
+  }
+  document.querySelectorAll(".booking-cat-card").forEach(card => card.classList.remove("active"));
+  if (btnEl) {
+    btnEl.classList.add("active");
+  }
+};
